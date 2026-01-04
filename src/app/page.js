@@ -1,66 +1,176 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { useEffect, useState } from "react";
+import ParticlesBackground from "../components/ParticlesBackground";
 
 export default function Home() {
+  const [typedName, setTypedName] = useState("");
+  const [typedSubtitle, setTypedSubtitle] = useState("");
+
+  const nameText = "Noé González";
+  const subtitleText = "Sitio en construcción";
+
+  // Máquina de escribir para el nombre
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setTypedName(nameText.slice(0, index + 1));
+      index++;
+      if (index === nameText.length) clearInterval(interval);
+    }, 120);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Máquina de escribir para el subtitle
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setTypedSubtitle(subtitleText.slice(0, index + 1));
+      index++;
+      if (index === subtitleText.length) clearInterval(interval);
+    }, 90);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="container">
+      <ParticlesBackground />
+
+      <div className="content">
+        <h1 className="neon">
+          <span className="title-prefix">Ing. </span>
+          {typedName}
+          <span className="blinking-cursor">|</span>
+        </h1>
+
+        <p className="subtitle">
+          🚧 {typedSubtitle}
+          <span className="blinking-cursor">|</span>
+        </p>
+
+        <p className="description">
+          Pronto podrás ver mis proyectos y novedades.
+        </p>
+
+        <a
+          href="https://www.linkedin.com/in/ingnoegonzalez/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-button"
+        >
+          Contacto / LinkedIn
+        </a>
+      </div>
+
+      <style jsx>{`
+        .container {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          background: linear-gradient(135deg, #0f0f1a, #1e1e2f);
+          font-family: 'Poppins', sans-serif;
+          animation: gradientShift 20s ease infinite;
+        }
+
+        @keyframes gradientShift {
+          0% { background: linear-gradient(135deg, #0f0f1a, #1e1e2f); }
+          50% { background: linear-gradient(135deg, #2c1f3a, #1e1e2f); }
+          100% { background: linear-gradient(135deg, #0f0f1a, #1e1e2f); }
+        }
+
+        .content {
+          position: relative;
+          z-index: 10;
+          padding: 20px;
+        }
+
+        .neon {
+          font-size: 4rem;
+          font-weight: 800;
+          color: #F7CD00;
+          text-shadow:
+            0 0 5px #F7CD00,
+            0 0 10px #F7CD00,
+            0 0 20px #F7CD00;
+          animation: fadeIn 2s ease forwards;
+        }
+
+        .title-prefix {
+          font-weight: 600;
+          opacity: 0.9;
+        }
+
+        .blinking-cursor {
+          display: inline-block;
+          width: 2px;
+          height: 1em;
+          background-color: #F7CD00;
+          margin-left: 4px;
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+          0%, 50%, 100% { opacity: 1; }
+          25%, 75% { opacity: 0; }
+        }
+
+        .subtitle {
+          margin-top: 20px;
+          font-size: 1.5rem;
+          color: #ffffffcc;
+          animation: fadeIn 2s ease forwards;
+        }
+
+        .description {
+          margin-top: 12px;
+          font-size: 1.1rem;
+          color: #ffffff99;
+          animation: fadeIn 2s ease forwards;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .contact-button {
+          display: inline-block;
+          margin-top: 30px;
+          padding: 12px 30px;
+          font-weight: 600;
+          font-size: 1rem;
+          background-color: #F7CD00;
+          color: #1e1e2f;
+          border-radius: 10px;
+          text-decoration: none;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+          .neon { font-size: 3rem; }
+          .subtitle { font-size: 1.2rem; }
+          .description { font-size: 1rem; }
+        }
+      `}</style>
     </div>
   );
 }
