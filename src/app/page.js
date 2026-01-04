@@ -7,7 +7,7 @@ export default function Home() {
   const [typedName, setTypedName] = useState("");
   const [typedSubtitle, setTypedSubtitle] = useState("");
 
-  const nameText = "Noé González";
+  const nameText = "Noe Gonzalez";
   const subtitleText = "Sitio en construcción";
 
   // Máquina de escribir para el nombre
@@ -18,7 +18,6 @@ export default function Home() {
       index++;
       if (index === nameText.length) clearInterval(interval);
     }, 120);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -30,7 +29,6 @@ export default function Home() {
       index++;
       if (index === subtitleText.length) clearInterval(interval);
     }, 90);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -46,7 +44,7 @@ export default function Home() {
         </h1>
 
         <p className="subtitle">
-          🚧 {typedSubtitle}
+          ⚙️ {typedSubtitle}
           <span className="blinking-cursor">|</span>
         </p>
 
@@ -54,14 +52,20 @@ export default function Home() {
           Pronto podrás ver mis proyectos y novedades.
         </p>
 
-        <a
-          href="https://www.linkedin.com/in/ingnoegonzalez/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-button"
-        >
-          Contacto / LinkedIn
-        </a>
+        <div className="buttons">
+          <button className="coming-button">
+            Próximamente
+          </button>
+
+          <a
+            href="https://www.linkedin.com/in/ingnoegonzalez/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="linkedin-button"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
 
       <style jsx>{`
@@ -80,9 +84,8 @@ export default function Home() {
         }
 
         @keyframes gradientShift {
-          0% { background: linear-gradient(135deg, #0f0f1a, #1e1e2f); }
+          0%,100% { background: linear-gradient(135deg, #0f0f1a, #1e1e2f); }
           50% { background: linear-gradient(135deg, #2c1f3a, #1e1e2f); }
-          100% { background: linear-gradient(135deg, #0f0f1a, #1e1e2f); }
         }
 
         .content {
@@ -95,17 +98,11 @@ export default function Home() {
           font-size: 4rem;
           font-weight: 800;
           color: #F7CD00;
-          text-shadow:
-            0 0 5px #F7CD00,
-            0 0 10px #F7CD00,
-            0 0 20px #F7CD00;
+          text-shadow: 0 0 5px #F7CD00, 0 0 10px #F7CD00, 0 0 20px #F7CD00;
           animation: fadeIn 2s ease forwards;
         }
 
-        .title-prefix {
-          font-weight: 600;
-          opacity: 0.9;
-        }
+        .title-prefix { font-weight: 600; opacity: 0.9; }
 
         .blinking-cursor {
           display: inline-block;
@@ -117,8 +114,8 @@ export default function Home() {
         }
 
         @keyframes blink {
-          0%, 50%, 100% { opacity: 1; }
-          25%, 75% { opacity: 0; }
+          0%,50%,100% { opacity: 1; }
+          25%,75% { opacity: 0; }
         }
 
         .subtitle {
@@ -136,33 +133,51 @@ export default function Home() {
         }
 
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
-        .contact-button {
-          display: inline-block;
+        .buttons {
           margin-top: 30px;
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        .coming-button, .linkedin-button {
           padding: 12px 30px;
           font-weight: 600;
           font-size: 1rem;
-          background-color: #F7CD00;
-          color: #1e1e2f;
           border-radius: 10px;
-          text-decoration: none;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          border: none;
+          cursor: pointer;
           transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-block;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .contact-button:hover {
+        .coming-button {
+          background-color: #F7CD00;
+          color: #1e1e2f;
+        }
+
+        .coming-button:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+          background-color: #ffd700;
+        }
+
+        .linkedin-button {
+          background-color: #0A66C2;
+          color: #fff;
+        }
+
+        .linkedin-button:hover {
+          background-color: #004182;
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
 
         @media (max-width: 768px) {
