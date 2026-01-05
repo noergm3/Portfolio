@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import HomeSection from "@/components/HomeSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
 
@@ -40,12 +41,14 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container">
+    // <div className="container">
+    <ParallaxProvider>
       <ParticlesBackground />
       <Navbar />
       <HomeSection />
       {/* <ProjectsSection /> */}
       {/* <ContactSection /> */}
-    </div>
+      {/* // </div> */}
+    </ParallaxProvider>
   );
 }

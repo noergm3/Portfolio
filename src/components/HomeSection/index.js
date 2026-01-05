@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./HomeSection.module.css";
+import { Parallax } from 'react-scroll-parallax';
 
 export default function HomeSection() {
     const [typedName, setTypedName] = useState("");
@@ -34,11 +35,13 @@ export default function HomeSection() {
 
     return (
         <section id="home" className={styles.homeSection}>
-            <h1 className={styles.neon}>
-                <span className={styles.titlePrefix}>Ing. </span>
-                {typedName}
-                <span className={styles.blinkingCursor}>&lt;/&gt;</span>
-            </h1>
+            <Parallax speed={5}>
+                <h1 className={styles.neon}>
+                    <span className={styles.titlePrefix}>Ing. </span>
+                    {typedName}
+                    <span className={styles.blinkingCursor}>&lt;/&gt;</span>
+                </h1>
+            </Parallax>
             <p className={styles.subtitle}>
                 ⚙️ {typedSubtitle}
                 <span className={styles.blinkingCursor}>&lt;/&gt;</span>
