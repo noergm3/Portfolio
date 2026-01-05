@@ -1,0 +1,112 @@
+.homeSection {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #0f0f1a, #1e1e2f);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.neon {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #F7CD00;
+    text-shadow: 0 0 5px #F7CD00, 0 0 10px #F7CD00, 0 0 20px #F7CD00;
+    margin: 0;
+}
+
+.titlePrefix {
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.blinkingCursor {
+    display: inline-block;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ffffffcc;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.comingButton,
+.linkedinButton {
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.comingButton {
+    background-color: #F7CD00;
+    color: #1e1e2f;
+}
+
+.comingButton:hover {
+    background-color: #ffd700;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.linkedinButton {
+    background-color: #0A66C2;
+    color: #fff;
+    padding: 14px 34px;
+}
+
+.linkedinButton:hover {
+    background-color: #004182;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .neon {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
