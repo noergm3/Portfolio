@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import ParticlesBackground from "../components/ParticlesBackground";
+import * as gtag from "../lib/gtag";
+
 
 export default function Home() {
   const [typedName, setTypedName] = useState("");
@@ -61,10 +63,18 @@ export default function Home() {
             href="https://www.linkedin.com/in/ingnoegonzalez/"
             target="_blank"
             rel="noopener noreferrer"
-            className="linkedin-button"
+            className="contact-button"
+            onClick={() =>
+              gtag.event({
+                action: "linkedin_click",
+                category: "social",
+                label: "linkedin_profile",
+              })
+            }
           >
-            LinkedIn
+            Contacto / LinkedIn
           </a>
+
         </div>
       </div>
 
