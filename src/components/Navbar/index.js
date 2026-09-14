@@ -90,7 +90,15 @@ export default function Navbar() {
           <button
             className={styles.menuToggle}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-label={
+              menuOpen
+                ? lang === "en"
+                  ? "Close menu"
+                  : "Cerrar menú"
+                : lang === "en"
+                ? "Open menu"
+                : "Abrir menú"
+            }
             aria-expanded={menuOpen}
           >
             {menuOpen ? "✕" : "☰"}

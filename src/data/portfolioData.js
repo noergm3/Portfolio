@@ -50,10 +50,16 @@ export const portfolioData = {
         "Whether architecting a multi-tenant SaaS platform from scratch or optimizing mission-critical national management systems, I prioritize clean architecture, strict security boundaries, high performance, and exceptional developer and user experience.",
       ],
       e2eTitle: "End-to-End Full Lifecycle Delivery",
+      e2eSubtitle: "Engineering architecture spanning presentation down to raw data persistence:",
       e2eSteps: [
         { layer: "Frontend UI", tech: "React · Next.js · MUI · Responsive UI" },
         { layer: "API & Services", tech: "Node.js · Express · REST APIs · JWT Auth" },
         { layer: "Enterprise Data", tech: "SQL Server · PostgreSQL · Prisma · MySQL" },
+      ],
+      principles: [
+        "✓ Modular Component Architecture",
+        "✓ Strict RBAC & Tenant Isolation",
+        "✓ ACID Relational Database Design",
       ],
     },
     specialties: {
@@ -425,6 +431,28 @@ export const portfolioData = {
       title: "Enterprise Architecture",
       subtitle:
         "How I structure scalable, decoupled, and secure full-stack software systems.",
+      tierPrefix: "TIER",
+      diagramNodes: [
+        {
+          badge: "01. Presentation",
+          title: "Next.js & React UI",
+          tech: "MUI · Responsive UI · State",
+          detail: "Server Components, SSR & Optimized Client Bundles",
+        },
+        {
+          badge: "02. Application & Logic",
+          title: "Node.js / Express API",
+          tech: "JWT Auth · RBAC · Tenant Resolver",
+          detail: "Business Rules, Middleware & Request Isolation",
+        },
+        {
+          badge: "03. Persistence",
+          title: "SQL Server / PostgreSQL",
+          tech: "Prisma ORM · Stored Procedures",
+          detail: "Tenant Isolated Schemas, ACID & Audit Trails",
+        },
+      ],
+      connectors: ["HTTPS / REST API", "Encrypted SQL"],
       tiers: [
         {
           title: "Client & Presentation Tier",
@@ -521,6 +549,7 @@ export const portfolioData = {
       badge: "Get in Touch",
       title: "Have a project, opportunity, or challenge?",
       subtitle: "Let's build something useful and high-performing.",
+      recruiterBadge: "Senior Frontend Opportunity",
       recruiterHeading: "Looking for a Senior Frontend Engineer?",
       recruiterPitch:
         "I bring a rare blend of deep modern React/Next.js craftsmanship and full-cycle enterprise software engineering experience. Available for high-impact remote positions and strategic projects.",
@@ -577,8 +606,8 @@ export const portfolioData = {
       stats: [
         { value: "10+", label: "Años Experiencia", detail: "Ingeniería de Software" },
         { value: "5+", label: "Años React / Next.js", detail: "Frontend Moderno Especializado" },
-        { value: "Enterprise", label: "Sistemas & SaaS", detail: "Arquitectura Multi-tenant" },
-        { value: "End-to-End", label: "Ciclo Completo", detail: "Desde UI hasta Base de Datos" },
+        { value: "Empresarial", label: "Sistemas & SaaS", detail: "Arquitectura Multi-tenant" },
+        { value: "Ciclo Completo", label: "Entrega Integral", detail: "Desde UI hasta Base de Datos" },
       ],
     },
     about: {
@@ -591,10 +620,16 @@ export const portfolioData = {
         "Ya sea arquitectando una plataforma SaaS multiempresa desde cero o manteniendo sistemas nacionales de alta disponibilidad, mi prioridad es la arquitectura limpia, la seguridad estricta de datos, el alto rendimiento y una experiencia de usuario sobresaliente.",
       ],
       e2eTitle: "Entrega de Extremo a Extremo (Full-Cycle)",
+      e2eSubtitle: "Arquitectura de software que abarca desde la presentación hasta la persistencia de datos:",
       e2eSteps: [
         { layer: "Frontend UI", tech: "React · Next.js · MUI · Responsive UI" },
         { layer: "APIs & Servicios", tech: "Node.js · Express · REST APIs · Auth JWT" },
         { layer: "Bases de Datos", tech: "SQL Server · PostgreSQL · Prisma · MySQL" },
+      ],
+      principles: [
+        "✓ Arquitectura Modular de Componentes",
+        "✓ Aislamiento Estricto de Tenant & RBAC",
+        "✓ Diseño de Bases de Datos con Integridad ACID",
       ],
     },
     specialties: {
@@ -669,27 +704,27 @@ export const portfolioData = {
         "Conectando los requerimientos de negocio con una arquitectura de software lista para producción.",
       items: [
         {
-          title: "Enterprise Applications",
+          title: "Aplicaciones Empresariales",
           description:
             "Sistemas administrativos y plataformas empresariales de alta concurrencia adaptadas a procesos operativos complejos.",
         },
         {
-          title: "SaaS Platforms",
+          title: "Plataformas SaaS Multiempresa",
           description:
             "Aplicaciones multiempresa con estricto aislamiento de datos entre clientes, suscripciones, roles y arquitectura modular.",
         },
         {
-          title: "Modern Frontends",
+          title: "Interfaces Web Modernas (Frontend)",
           description:
             "Interfaces React y Next.js ultra-rápidas, reactivas y accesibles, con diseño responsivo y arquitectura modular de componentes.",
         },
         {
-          title: "Business Systems",
+          title: "Sistemas Críticos de Negocio",
           description:
             "Puntos de venta (POS), inventarios, control de créditos y amortizaciones, restaurantes y gestión educativa institucional.",
         },
         {
-          title: "API & Backend Integration",
+          title: "Integración de APIs y Backend",
           description:
             "Conexión fluida, tipada y segura entre el frontend, servicios REST desacoplados y bases de datos transaccionales.",
         },
@@ -717,7 +752,7 @@ export const portfolioData = {
         {
           id: "education-saas",
           title: "Plataforma Educativa SaaS",
-          type: "Multi-Tenant SaaS",
+          type: "SaaS Multi-Tenant",
           highlight: "Plataforma SaaS Multiempresa para Colegios y Centros de Formación",
           problem:
             "Las instituciones educativas suelen lidiar con herramientas fragmentadas para matrículas, calificaciones, cobros y comunicación, sin contar con un aislamiento seguro entre campus o sedes.",
@@ -749,7 +784,7 @@ export const portfolioData = {
         {
           id: "national-education",
           title: "Sistema Nacional de Gestión Educativa",
-          type: "Real Enterprise Experience",
+          type: "Experiencia Institucional Real",
           highlight: "Ecosistema Institucional de Gestión Educativa a Escala Nacional",
           problem:
             "La infraestructura educativa a nivel nacional requería modernizar sistemas administrativos y de registro académico con alta confiabilidad, trazabilidad y restricciones de acceso estrictas por sede.",
@@ -779,7 +814,7 @@ export const portfolioData = {
         {
           id: "multi-tenant-erp",
           title: "ERP & POS Multiempresa",
-          type: "Multi-Tenant SaaS",
+          type: "SaaS Multi-Tenant",
           highlight: "Operaciones Comerciales con Aislamiento Estricto de Datos",
           tenantIsolationNotice: "Aislamiento Estricto de Datos (Tenant Isolation)",
           problem:
@@ -810,7 +845,7 @@ export const portfolioData = {
         {
           id: "sales-inventory",
           title: "Sistema de Ventas e Inventario",
-          type: "Business Critical",
+          type: "Crítico de Negocio",
           highlight: "Flujo Comercial con Control de Vencimientos y Créditos",
           flowDiagram: [
             "Producto",
@@ -845,7 +880,7 @@ export const portfolioData = {
         {
           id: "restaurant-pos",
           title: "POS SaaS para Restaurantes",
-          type: "Multi-Tenant SaaS",
+          type: "SaaS Multi-Tenant",
           highlight: "Gestión de Sucursales, Mesas, Comandas, Pantalla de Cocina (KDS) y Caja",
           treeArchitecture: {
             root: "Restaurante",
@@ -878,7 +913,7 @@ export const portfolioData = {
         {
           id: "personal-loans",
           title: "Préstamos Personales y Amortización",
-          type: "Business Critical",
+          type: "Crítico de Negocio",
           highlight: "Reglas de Negocio Financieras y Amortización sobre Saldo Insoluto",
           problem:
             "Las empresas de préstamos y crédito necesitan cálculos matemáticos confiables y transparentes para intereses sobre saldo insoluto, cuotas y abonos anticipados.",
@@ -904,7 +939,7 @@ export const portfolioData = {
         {
           id: "mobile-sales",
           title: "Ventas e Inventario Móvil (Extensión Android)",
-          type: "Mobile Extension",
+          type: "Extensión Móvil",
           highlight: "Operaciones de Venta e Inventario en Campo para Android",
           problem:
             "Agentes de ventas en ruta y personal de almacén requerían consultar disponibilidad de productos y emitir pedidos sin depender de una computadora de escritorio.",
@@ -966,6 +1001,28 @@ export const portfolioData = {
       title: "Arquitectura de Software",
       subtitle:
         "Cómo estructuro sistemas desacoplados, escalables y seguros de extremo a extremo.",
+      tierPrefix: "CAPA",
+      diagramNodes: [
+        {
+          badge: "01. Presentación",
+          title: "Next.js & React UI",
+          tech: "MUI · Responsive UI · Gestión de Estado",
+          detail: "Server Components, SSR & Bundles Optimizados de Cliente",
+        },
+        {
+          badge: "02. Aplicación & Lógica",
+          title: "Node.js / Express API",
+          tech: "Auth JWT · RBAC · Resolución de Tenant",
+          detail: "Reglas de Negocio, Middleware y Aislamiento de Peticiones",
+        },
+        {
+          badge: "03. Persistencia",
+          title: "SQL Server / PostgreSQL",
+          tech: "Prisma ORM · Stored Procedures",
+          detail: "Esquemas Aislados por Tenant, Integridad ACID & Auditoría",
+        },
+      ],
+      connectors: ["HTTPS / REST API", "SQL Cifrado"],
       tiers: [
         {
           title: "Capa de Cliente & Presentación",
@@ -1062,6 +1119,7 @@ export const portfolioData = {
       badge: "Contacto Directo",
       title: "¿Tienes un proyecto, oportunidad o desafío?",
       subtitle: "Construyamos algo útil, sólido y de alto rendimiento.",
+      recruiterBadge: "Oportunidad Senior Frontend",
       recruiterHeading: "¿Buscas un Senior Frontend Engineer?",
       recruiterPitch:
         "Aporto una combinación poco común: destreza avanzada en React/Next.js moderno y sólida disciplina de ingeniería de sistemas empresariales. Disponible para puestos remotos y proyectos estratégicos.",

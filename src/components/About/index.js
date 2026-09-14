@@ -35,9 +35,7 @@ export default function About() {
           <div className={styles.e2eColumn}>
             <div className={styles.e2eCard}>
               <h3 className={styles.e2eTitle}>{about.e2eTitle}</h3>
-              <p className={styles.e2eSubtitle}>
-                Engineering architecture spanning presentation down to raw data persistence:
-              </p>
+              <p className={styles.e2eSubtitle}>{about.e2eSubtitle}</p>
 
               <div className={styles.flowSteps}>
                 {about.e2eSteps.map((step, idx) => (
@@ -58,9 +56,11 @@ export default function About() {
               </div>
 
               <div className={styles.principlePills}>
-                <span className={styles.pill}>✓ Modular Component Architecture</span>
-                <span className={styles.pill}>✓ Strict RBAC & Tenant Isolation</span>
-                <span className={styles.pill}>✓ ACID Relational Database Design</span>
+                {about.principles?.map((pill, pIdx) => (
+                  <span key={pIdx} className={styles.pill}>
+                    {pill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

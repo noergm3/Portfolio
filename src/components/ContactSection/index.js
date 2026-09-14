@@ -50,7 +50,7 @@ export default function ContactSection() {
         {/* Recruiter Callout Banner */}
         <div className={styles.recruiterBox}>
           <div className={styles.recruiterHeader}>
-            <span className={styles.recruiterBadge}>Senior Frontend Opportunity</span>
+            <span className={styles.recruiterBadge}>{contact.recruiterBadge}</span>
             <h3 className={styles.recruiterHeading}>{contact.recruiterHeading}</h3>
           </div>
           <p className={styles.recruiterPitch}>{contact.recruiterPitch}</p>

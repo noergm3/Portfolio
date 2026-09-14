@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import styles from "./ArchitectureSection.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -20,59 +21,30 @@ export default function ArchitectureSection() {
         {/* Visual Architecture Diagram */}
         <div className={styles.diagramCard}>
           <div className={styles.diagramGrid}>
-            {/* Step 1: User & Client */}
-            <div className={styles.diagramNode}>
-              <div className={styles.nodeHeader}>
-                <span className={styles.nodeBadge}>01. Presentation</span>
-                <h4 className={styles.nodeTitle}>Next.js & React UI</h4>
-              </div>
-              <div className={styles.nodeBody}>
-                <span className={styles.nodeTech}>MUI · Responsive UI · State</span>
-                <p className={styles.nodeDetail}>
-                  Server Components, SSR & Optimized Client Bundles
-                </p>
-              </div>
-            </div>
+            {architecture.diagramNodes?.map((node, nIdx) => (
+              <Fragment key={nIdx}>
+                <div className={styles.diagramNode}>
+                  <div className={styles.nodeHeader}>
+                    <span className={styles.nodeBadge}>{node.badge}</span>
+                    <h4 className={styles.nodeTitle}>{node.title}</h4>
+                  </div>
+                  <div className={styles.nodeBody}>
+                    <span className={styles.nodeTech}>{node.tech}</span>
+                    <p className={styles.nodeDetail}>{node.detail}</p>
+                  </div>
+                </div>
 
-            <div className={styles.connector}>
-              <span className={styles.connectorLine}></span>
-              <span className={styles.connectorLabel}>HTTPS / REST API</span>
-              <span className={styles.connectorArrow}>►</span>
-            </div>
-
-            {/* Step 2: API & Gateway */}
-            <div className={styles.diagramNode}>
-              <div className={styles.nodeHeader}>
-                <span className={styles.nodeBadge}>02. Application & Logic</span>
-                <h4 className={styles.nodeTitle}>Node.js / Express API</h4>
-              </div>
-              <div className={styles.nodeBody}>
-                <span className={styles.nodeTech}>JWT Auth · RBAC · Tenant Resolver</span>
-                <p className={styles.nodeDetail}>
-                  Business Rules, Middleware & Request Isolation
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.connector}>
-              <span className={styles.connectorLine}></span>
-              <span className={styles.connectorLabel}>Encrypted SQL</span>
-              <span className={styles.connectorArrow}>►</span>
-            </div>
-
-            {/* Step 3: Data Tier */}
-            <div className={styles.diagramNode}>
-              <div className={styles.nodeHeader}>
-                <span className={styles.nodeBadge}>03. Persistence</span>
-                <h4 className={styles.nodeTitle}>SQL Server / PostgreSQL</h4>
-              </div>
-              <div className={styles.nodeBody}>
-                <span className={styles.nodeTech}>Prisma ORM · Stored Procedures</span>
-                <p className={styles.nodeDetail}>
-                  Tenant Isolated Schemas, ACID & Audit Trails
-                </p>
-              </div>
-            </div>
+                {nIdx < architecture.diagramNodes.length - 1 && (
+                  <div className={styles.connector}>
+                    <span className={styles.connectorLine}></span>
+                    <span className={styles.connectorLabel}>
+                      {architecture.connectors?.[nIdx] || "HTTPS / REST API"}
+                    </span>
+                    <span className={styles.connectorArrow}>►</span>
+                  </div>
+                )}
+              </Fragment>
+            ))}
           </div>
         </div>
 
@@ -81,7 +53,9 @@ export default function ArchitectureSection() {
           {architecture.tiers.map((tier, idx) => (
             <div key={idx} className={styles.tierCard}>
               <div className={styles.tierHeader}>
-                <span className={styles.tierNumber}>TIER {idx + 1}</span>
+                <span className={styles.tierNumber}>
+                  {(architecture.tierPrefix || "TIER")} {idx + 1}
+                </span>
                 <h3 className={styles.tierTitle}>{tier.title}</h3>
                 <span className={styles.tierTech}>{tier.tech}</span>
               </div>
