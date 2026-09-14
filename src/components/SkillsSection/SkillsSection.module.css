@@ -1,12 +1,12 @@
-.projectsSection {
+.skillsSection {
   padding: 100px 24px;
-  background: linear-gradient(180deg, #1a1a2e 0%, #151525 50%, #1e1e2f 100%);
+  background: linear-gradient(180deg, #1e1e2f 0%, #151525 50%, #1a1a2e 100%);
   color: #fff;
   display: flex;
   justify-content: center;
 }
 
-.projectsContainer {
+.skillsContainer {
   max-width: 1200px;
   width: 100%;
 }
@@ -52,100 +52,81 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  padding: 30px 26px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-6px);
   background: rgba(247, 205, 0, 0.04);
-  border-color: rgba(247, 205, 0, 0.4);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+  border-color: rgba(247, 205, 0, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
-.cardTop {
+.cardHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 14px;
   margin-bottom: 22px;
 }
 
-.folderIcon {
+.iconWrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(247, 205, 0, 0.12);
   color: #F7CD00;
-}
-
-.actionLinks {
   display: flex;
-  gap: 12px;
-}
-
-.linkIcon {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #c9c9d9;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
-  text-decoration: none;
+  border: 1px solid rgba(247, 205, 0, 0.3);
 }
 
-.linkIcon:hover {
-  background: rgba(247, 205, 0, 0.18);
-  color: #F7CD00;
-  transform: scale(1.08);
-}
-
-.projectTitle {
-  font-size: 1.4rem;
+.categoryTitle {
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 12px;
-  line-height: 1.3;
+  color: #fff;
+  margin: 0;
 }
 
-.projectDescription {
-  font-size: 0.98rem;
-  color: #b8b8c7;
-  line-height: 1.65;
-  margin-bottom: 24px;
-  flex-grow: 1;
-}
-
-.techStack {
+.skillsList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 10px;
 }
 
-.techTag {
-  font-size: 0.8rem;
+.skillBadge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e5e5f0;
+  font-size: 0.88rem;
   font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.skillBadge:hover {
+  background: rgba(247, 205, 0, 0.15);
+  border-color: #F7CD00;
   color: #F7CD00;
-  background: rgba(247, 205, 0, 0.08);
-  border: 1px solid rgba(247, 205, 0, 0.2);
-  padding: 4px 10px;
-  border-radius: 6px;
+  transform: scale(1.04);
 }
 
 @media (max-width: 768px) {
-  .projectsSection {
+  .skillsSection {
     padding: 70px 16px;
   }
 
@@ -155,10 +136,10 @@
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
 
   .card {
-    padding: 24px 20px;
+    padding: 22px 18px;
   }
 }

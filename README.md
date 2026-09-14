@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio Profesional — Ing. Noé González
 
-## Getting Started
+Sitio web personal y portafolio profesional desarrollado con **Next.js 16 (App Router)**, **React 19** y **Turbopack**.
 
-First, run the development server:
+🌐 **Sitio en vivo**: [https://noegonzalez.dev](https://noegonzalez.dev)  
+💼 **LinkedIn**: [https://www.linkedin.com/in/ingnoegonzalez/](https://www.linkedin.com/in/ingnoegonzalez/)  
+🐙 **GitHub**: [https://github.com/noergm3](https://github.com/noergm3)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Características Principales
+
+- **Diseño Moderno & Responsivo**: Estética oscura con detalles dorados neón (`#F7CD00`), optimizada para móviles, tablets y monitores de escritorio.
+- **Efectos Interactivos**: Fondo de partículas reactivas (`tsparticles`) y efectos de scroll parallax (`react-scroll-parallax`).
+- **Máquina de Escribir Dinámica**: Animación en tiempo real que alterna roles profesionales y áreas de especialidad en la sección de inicio.
+- **Datos Centralizados**: Toda la información de perfil, habilidades, proyectos y redes sociales se gestiona desde un único archivo (`src/data/portfolioData.js`), permitiendo actualizar contenidos sin modificar componentes ni estilos.
+- **Sección de Contacto Interactiva**: Incluye botón directo para copiar la dirección de correo al portapapeles con confirmación visual en tiempo real.
+- **SEO & Rendimiento**: Metadatos completos (Open Graph, Twitter Cards), generación automática de sitemap y robots.txt (`next-sitemap`).
+
+---
+
+## 🛠️ Stack Tecnológico
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **Biblioteca UI**: [React 19](https://react.dev/)
+- **Estilos**: CSS Modules con variables personalizadas y soporte de scroll suave
+- **Animaciones**: `react-tsparticles`, `tsparticles`, `react-scroll-parallax`
+- **SEO**: `next-sitemap`
+- **Despliegue Continuo**: Integrado con Netlify a través de GitHub
+
+---
+
+## 📁 Estructura del Proyecto
+
+```text
+src/
+├── app/
+│   ├── globals.css          # Variables de tema, scrollbar y reset
+│   ├── layout.js            # Metadatos SEO, Open Graph y Google Analytics
+│   └── page.js              # Composición semántica de las secciones
+├── components/
+│   ├── Navbar/              # Barra de navegación fija con efecto blur y menú móvil
+│   ├── HomeSection/         # Hero con typewriter de roles y llamados a la acción
+│   ├── About/               # Perfil profesional, métricas y trayectoria (+10 años)
+│   ├── SkillsSection/       # Habilidades categorizadas (Frontend, Backend, DB, Cloud)
+│   ├── ProjectsSection/     # Tarjetas de proyectos con tags y enlaces a GitHub/Demo
+│   ├── ContactSection/      # Métodos de contacto y copiado rápido de correo
+│   ├── Footer/              # Pie de página con copyright y volver arriba
+│   └── ParticlesBackground/ # Configuración de partículas doradas interactivas
+└── data/
+    └── portfolioData.js     # Fuente única de verdad para datos y proyectos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 💻 Desarrollo Local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clona el repositorio e instala las dependencias:
+   ```bash
+   git clone https://github.com/noergm3/Portfolio.git
+   cd Portfolio
+   npm install
+   ```
 
-## Learn More
+2. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+   Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-To learn more about Next.js, take a look at the following resources:
+3. Compilar para producción y generar el sitemap:
+   ```bash
+   npm run build
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Ejecutar el linter:
+   ```bash
+   npm run lint
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📝 Cómo personalizar tus proyectos y datos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Para agregar o modificar tus proyectos, habilidades o información de contacto, solo edita el archivo:
+👉 `src/data/portfolioData.js`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Al guardar y hacer push a GitHub, Netlify desplegará automáticamente la nueva versión.
