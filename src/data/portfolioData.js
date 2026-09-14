@@ -20,7 +20,6 @@ export const portfolioData = {
   social: {
     email: "noergm3@gmail.com",
     linkedin: "https://www.linkedin.com/in/ingnoegonzalez/",
-    github: "https://github.com/noergm3",
     siteUrl: "https://noegonzalez.dev",
   },
 
@@ -39,7 +38,7 @@ export const portfolioData = {
     },
     {
       category: "Herramientas & Cloud",
-      skills: ["Git & GitHub", "Netlify & Vercel", "Docker", "CI/CD", "Metodologías Ágiles / Scrum", "Turbopack"],
+      skills: ["Git & Control de Versiones", "Netlify & Vercel", "Docker", "CI/CD", "Metodologías Ágiles / Scrum", "Turbopack"],
     },
   ],
 
@@ -50,7 +49,6 @@ export const portfolioData = {
       description:
         "Plataforma integral para control de inventarios, facturación, cuentas por cobrar y reportes analíticos transaccionales en tiempo real.",
       technologies: ["React", "Node.js", "SQL Server", "Express", "REST API"],
-      github: "https://github.com/noergm3",
       demo: "#",
       featured: true,
     },
@@ -60,7 +58,6 @@ export const portfolioData = {
       description:
         "Sitio web personal desarrollado con Next.js (App Router), animaciones interactivas de partículas, scroll parallax y optimización avanzada de SEO.",
       technologies: ["Next.js", "React 19", "CSS Modules", "Turbopack"],
-      github: "https://github.com/noergm3/Portfolio",
       demo: "https://noegonzalez.dev",
       featured: true,
     },
@@ -70,7 +67,6 @@ export const portfolioData = {
       description:
         "Microservicio backend robusto con autenticación basada en JWT, control de acceso por roles (RBAC) y conexión a base de datos de alta concurrencia.",
       technologies: ["Node.js", "Express", "SQL Server", "Docker", "JWT"],
-      github: "https://github.com/noergm3",
       demo: "#",
       featured: true,
     },
@@ -80,7 +76,6 @@ export const portfolioData = {
       description:
         "Panel de control interactivo y visualización de indicadores clave (KPIs) con exportación dinámica de datos y gráficos en tiempo real.",
       technologies: ["React", "Next.js", "Chart.js", "REST API", "CSS Modules"],
-      github: "https://github.com/noergm3",
       demo: "#",
       featured: false,
     },
