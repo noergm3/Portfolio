@@ -1,13 +1,14 @@
 "use client";
 
 import styles from "./SkillsSection.module.css";
-import { portfolioData } from "@/data/portfolioData";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function SkillsSection() {
-  const { skillsCategories } = portfolioData;
+  const { t } = useLanguage();
+  const { specialties } = t;
 
   const categoryIcons = {
-    Frontend: (
+    frontend: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="26"
@@ -24,7 +25,7 @@ export default function SkillsSection() {
         <polyline points="2 12 12 17 22 12"></polyline>
       </svg>
     ),
-    Backend: (
+    backend: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="26"
@@ -42,7 +43,7 @@ export default function SkillsSection() {
         <line x1="6" y1="18" x2="6.01" y2="18"></line>
       </svg>
     ),
-    "Bases de Datos": (
+    data: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="26"
@@ -59,7 +60,7 @@ export default function SkillsSection() {
         <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
       </svg>
     ),
-    "Herramientas & Cloud": (
+    architecture: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="26"
@@ -71,32 +72,35 @@ export default function SkillsSection() {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
       </svg>
     ),
   };
 
   return (
-    <section id="skills" className={styles.skillsSection}>
+    <section id="specialties" className={styles.skillsSection}>
       <div className={styles.skillsContainer}>
         <div className={styles.headerArea}>
-          <span className={styles.sectionBadge}>Stack Tecnológico</span>
-          <h2 className={styles.sectionTitle}>Habilidades & Dominio</h2>
+          <span className={styles.sectionBadge}>{specialties.badge}</span>
+          <h2 className={styles.sectionTitle}>{specialties.title}</h2>
           <div className={styles.divider}></div>
-          <p className={styles.sectionDescription}>
-            Herramientas y tecnologías con las que diseño, desarrollo y optimizo
-            soluciones digitales a lo largo de más de una década.
-          </p>
+          <p className={styles.sectionDescription}>{specialties.subtitle}</p>
         </div>
 
         <div className={styles.grid}>
-          {skillsCategories.map((item, idx) => (
-            <div key={idx} className={styles.card}>
+          {specialties.categories.map((item) => (
+            <div key={item.id} className={styles.card}>
               <div className={styles.cardHeader}>
                 <div className={styles.iconWrapper}>
-                  {categoryIcons[item.category] || null}
+                  {categoryIcons[item.id] || null}
                 </div>
-                <h3 className={styles.categoryTitle}>{item.category}</h3>
+                <div>
+                  <h3 className={styles.categoryTitle}>{item.title}</h3>
+                  <p className={styles.categoryDesc}>{item.description}</p>
+                </div>
               </div>
 
               <div className={styles.skillsList}>

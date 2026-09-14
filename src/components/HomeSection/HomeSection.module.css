@@ -5,15 +5,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 120px 24px 80px 24px;
-  background: radial-gradient(circle at 50% 30%, rgba(30, 30, 60, 0.45) 0%, rgba(15, 15, 26, 0.95) 75%);
+  padding: 130px 24px 80px 24px;
+  background: radial-gradient(circle at 50% 25%, rgba(35, 35, 75, 0.45) 0%, rgba(15, 15, 26, 0.96) 80%);
   color: #fff;
   position: relative;
   overflow: hidden;
 }
 
 .contentContainer {
-  max-width: 900px;
+  max-width: 1050px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -25,15 +25,15 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(46, 213, 115, 0.1);
-  border: 1px solid rgba(46, 213, 115, 0.35);
+  background: rgba(46, 213, 115, 0.08);
+  border: 1px solid rgba(46, 213, 115, 0.3);
   color: #2ed573;
   padding: 6px 18px;
   border-radius: 50px;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 24px;
-  box-shadow: 0 0 15px rgba(46, 213, 115, 0.15);
+  margin-bottom: 22px;
+  box-shadow: 0 0 16px rgba(46, 213, 115, 0.12);
 }
 
 .pulseDot {
@@ -61,10 +61,10 @@
 }
 
 .neon {
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: #F7CD00;
-  text-shadow: 0 0 8px rgba(247, 205, 0, 0.6), 0 0 20px rgba(247, 205, 0, 0.35);
+  text-shadow: 0 0 10px rgba(247, 205, 0, 0.5), 0 0 24px rgba(247, 205, 0, 0.3);
   margin: 0;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -80,7 +80,7 @@
 .blinkingCursor {
   display: inline-block;
   margin-left: 6px;
-  font-size: 0.85em;
+  font-size: 0.82em;
   color: #F7CD00;
   animation: blink 1.2s infinite;
 }
@@ -90,15 +90,27 @@
   50% { opacity: 0; }
 }
 
+.titleRole {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 14px;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #ffffff, #F7CD00, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .subtitle {
-  margin-top: 18px;
-  font-size: 1.45rem;
+  margin-top: 10px;
+  font-size: 1.25rem;
   font-weight: 500;
-  color: #f1f1f5;
+  color: #d8d8e6;
   min-height: 2.2rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-geist-mono), monospace;
 }
 
 .subtitlePrompt {
@@ -115,15 +127,51 @@
 }
 
 .tagline {
-  margin-top: 16px;
-  font-size: 1.12rem;
+  margin-top: 14px;
+  font-size: 1.15rem;
   color: #b8b8c7;
-  max-width: 650px;
+  max-width: 720px;
   line-height: 1.6;
 }
 
+.recruiterCallout {
+  margin-top: 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(247, 205, 0, 0.06);
+  border: 1px solid rgba(247, 205, 0, 0.35);
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 0.94rem;
+  color: #f1f1f5;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+}
+
+.recruiterIcon {
+  font-size: 1.1rem;
+}
+
+.recruiterText {
+  font-weight: 500;
+}
+
+.recruiterLink {
+  color: #F7CD00;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.recruiterLink:hover {
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
 .buttons {
-  margin-top: 36px;
+  margin-top: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,9 +182,9 @@
 .primaryButton,
 .secondaryButton,
 .linkedinButton {
-  padding: 13px 28px;
+  padding: 13px 26px;
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -188,17 +236,78 @@
   box-shadow: 0 6px 18px rgba(10, 102, 194, 0.4);
 }
 
+/* Quick Stats Bar */
+.statsBar {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statItem {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.statItem:hover {
+  background: rgba(247, 205, 0, 0.04);
+  border-color: rgba(247, 205, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.statNumber {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #F7CD00;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.statTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.statDetail {
+  font-size: 0.74rem;
+  color: #9494a8;
+}
+
+@media (max-width: 900px) {
+  .statsBar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .homeSection {
-    padding: 100px 16px 60px 16px;
+    padding: 110px 16px 60px 16px;
   }
 
   .neon {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+  }
+
+  .titleRole {
+    font-size: 1.35rem;
   }
 
   .subtitle {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     min-height: 2.8rem;
   }
 
@@ -206,10 +315,16 @@
     font-size: 0.98rem;
   }
 
+  .recruiterCallout {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
   .buttons {
     flex-direction: column;
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
     gap: 12px;
   }
 
@@ -217,5 +332,10 @@
   .secondaryButton,
   .linkedinButton {
     width: 100%;
+  }
+
+  .statsBar {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }

@@ -1,12 +1,12 @@
-.skillsSection {
+.section {
   padding: 100px 24px;
-  background: linear-gradient(180deg, #1a1a2e 0%, #151525 50%, #1e1e2f 100%);
+  background: linear-gradient(180deg, #1e1e2f 0%, #171728 50%, #151525 100%);
   color: #fff;
   display: flex;
   justify-content: center;
 }
 
-.skillsContainer {
+.container {
   max-width: 1200px;
   width: 100%;
 }
@@ -57,90 +57,65 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 28px 24px;
+  border-radius: 14px;
+  padding: 26px 24px;
   display: flex;
   flex-direction: column;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s ease;
 }
 
 .card:hover {
-  background: rgba(247, 205, 0, 0.04);
+  background: rgba(247, 205, 0, 0.03);
   border-color: rgba(247, 205, 0, 0.35);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transform: translateY(-3px);
 }
 
-.cardHeader {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.iconWrapper {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: rgba(247, 205, 0, 0.12);
+.groupCategory {
+  font-size: 1.15rem;
+  font-weight: 800;
   color: #F7CD00;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(247, 205, 0, 0.3);
-  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.categoryTitle {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-.categoryDesc {
-  font-size: 0.88rem;
-  color: #a0a0b2;
-  line-height: 1.4;
-}
-
-.skillsList {
+.badgeList {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: auto;
-  padding-top: 10px;
 }
 
-.skillBadge {
+.techBadge {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #e5e5f0;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
-.skillBadge:hover {
-  background: rgba(247, 205, 0, 0.14);
+.techBadge:hover {
+  background: rgba(247, 205, 0, 0.12);
   border-color: #F7CD00;
   color: #F7CD00;
-  transform: translateY(-2px);
+  transform: scale(1.03);
 }
 
-@media (max-width: 880px) {
+@media (max-width: 800px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
   }
 }
 
 @media (max-width: 768px) {
-  .skillsSection {
+  .section {
     padding: 70px 16px;
   }
 
@@ -149,6 +124,6 @@
   }
 
   .card {
-    padding: 22px 18px;
+    padding: 20px 16px;
   }
 }

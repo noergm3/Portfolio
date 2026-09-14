@@ -1,0 +1,123 @@
+.section {
+  padding: 100px 24px;
+  background: linear-gradient(180deg, #1e1e2f 0%, #151525 50%, #171728 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionBadge {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F7CD00;
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.divider {
+  width: 50px;
+  height: 4px;
+  background: #F7CD00;
+  border-radius: 2px;
+  margin: 0 auto 16px auto;
+}
+
+.sectionDescription {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #b8b8c7;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  background: rgba(247, 205, 0, 0.04);
+  border-color: rgba(247, 205, 0, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.iconCircle {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(247, 205, 0, 0.1);
+  border: 1px solid rgba(247, 205, 0, 0.25);
+  color: #F7CD00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: #b0b0c2;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .sectionTitle {
+    font-size: 2.1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

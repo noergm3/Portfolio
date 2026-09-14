@@ -1,83 +1,136 @@
 "use client";
 
 import styles from "./ProjectsSection.module.css";
-import { portfolioData } from "@/data/portfolioData";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ProjectsSection() {
-  const { projects } = portfolioData;
+  const { t } = useLanguage();
+  const { projects } = t;
 
   return (
     <section id="projects" className={styles.projectsSection}>
       <div className={styles.projectsContainer}>
         <div className={styles.headerArea}>
-          <span className={styles.sectionBadge}>Casos de Éxito & Portafolio</span>
-          <h2 className={styles.sectionTitle}>Proyectos Destacados</h2>
+          <span className={styles.sectionBadge}>{projects.badge}</span>
+          <h2 className={styles.sectionTitle}>{projects.title}</h2>
           <div className={styles.divider}></div>
-          <p className={styles.sectionDescription}>
-            Una selección de sistemas empresariales, aplicaciones web y
-            arquitecturas desarrolladas con enfoque en rendimiento, seguridad y experiencia.
-          </p>
+          <p className={styles.sectionDescription}>{projects.subtitle}</p>
         </div>
 
-        <div className={styles.grid}>
-          {projects.map((project) => (
-            <article key={project.id} className={styles.card}>
-              <div className={styles.cardTop}>
-                <div className={styles.folderIcon}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                  </svg>
-                </div>
-
-                <div className={styles.actionLinks}>
-                  {project.demo && project.demo !== "#" && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.linkIcon}
-                      aria-label={`Ver demo en vivo de ${project.title}`}
-                      title="Ver demo en vivo"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                    </a>
-                  )}
+        <div className={styles.projectsList}>
+          {projects.list.map((proj) => (
+            <article
+              key={proj.id}
+              className={`${styles.projectCard} ${
+                proj.id === "national-education" ? styles.enterpriseCard : ""
+              }`}
+            >
+              <div className={styles.cardHeader}>
+                <div className={styles.titleGroup}>
+                  <div className={styles.typeBadgeRow}>
+                    <span className={styles.typeBadge}>{proj.type}</span>
+                    {proj.tenantIsolationNotice && (
+                      <span className={styles.tenantBadge}>
+                        🛡️ {proj.tenantIsolationNotice}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className={styles.projectTitle}>{proj.title}</h3>
+                  <p className={styles.projectHighlight}>{proj.highlight}</p>
                 </div>
               </div>
 
-              <h3 className={styles.projectTitle}>{project.title}</h3>
-              <p className={styles.projectDescription}>{project.description}</p>
+              {/* Special visual diagrams for specific projects */}
+              {proj.flowDiagram && (
+                <div className={styles.flowDiagramContainer}>
+                  <span className={styles.diagramLabel}>{projects.labels.diagramFlow}</span>
+                  <div className={styles.flowRow}>
+                    {proj.flowDiagram.map((step, sIdx) => (
+                      <div key={sIdx} className={styles.flowStepWrapper}>
+                        <span className={styles.flowNode}>{step}</span>
+                        {sIdx < proj.flowDiagram.length - 1 && (
+                          <span className={styles.flowArrow}>→</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-              <div className={styles.techStack}>
-                {project.technologies.map((tech, tIdx) => (
-                  <span key={tIdx} className={styles.techTag}>
-                    {tech}
-                  </span>
-                ))}
+              {proj.treeArchitecture && (
+                <div className={styles.treeContainer}>
+                  <span className={styles.diagramLabel}>{projects.labels.diagramTree}</span>
+                  <div className={styles.treeBox}>
+                    <div className={styles.treeRoot}>🏢 {proj.treeArchitecture.root}</div>
+                    <div className={styles.treeBranch}>
+                      └── 📍 {proj.treeArchitecture.branches}
+                      <div className={styles.treeSubComponents}>
+                        {proj.treeArchitecture.components.map((comp, cIdx) => (
+                          <span key={cIdx} className={styles.treeLeaf}>
+                            ├── {comp}
+                          </span>
+                        ))}
+                      </div>
+                      <div className={styles.treeStations}>
+                        {proj.treeArchitecture.stations.map((st, sIdx) => (
+                          <span key={sIdx} className={styles.treeSubLeaf}>
+                            └── {st}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Problem & Solution */}
+              <div className={styles.problemSolutionGrid}>
+                <div className={styles.columnBox}>
+                  <div className={styles.boxHeader}>
+                    <span className={styles.boxDotRed}></span>
+                    <span className={styles.boxTitle}>{projects.labels.problem}</span>
+                  </div>
+                  <p className={styles.boxText}>{proj.problem}</p>
+                </div>
+
+                <div className={styles.columnBox}>
+                  <div className={styles.boxHeader}>
+                    <span className={styles.boxDotGreen}></span>
+                    <span className={styles.boxTitle}>{projects.labels.solution}</span>
+                  </div>
+                  <p className={styles.boxText}>{proj.solution}</p>
+                </div>
+              </div>
+
+              {/* Key Features */}
+              <div className={styles.featuresSection}>
+                <span className={styles.sectionSubhead}>{projects.labels.features}:</span>
+                <ul className={styles.featuresList}>
+                  {proj.features.map((feat, fIdx) => (
+                    <li key={fIdx} className={styles.featureItem}>
+                      <span className={styles.featureCheck}>✓</span>
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* My Role & Contribution */}
+              <div className={styles.contributionSection}>
+                <span className={styles.sectionSubhead}>{projects.labels.contribution}:</span>
+                <p className={styles.contributionText}>{proj.contribution}</p>
+              </div>
+
+              {/* Technologies */}
+              <div className={styles.techFooter}>
+                <span className={styles.techLabel}>{projects.labels.tech}:</span>
+                <div className={styles.techPills}>
+                  {proj.technologies.map((tech, tIdx) => (
+                    <span key={tIdx} className={styles.techTag}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

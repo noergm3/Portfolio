@@ -1,88 +1,66 @@
-# Portafolio Profesional — Ing. Noé González
+# Portafolio Profesional — Ing. Noé González Mendoza
+### Senior Frontend Engineer · React · Next.js · Node.js · Arquitectura SaaS
 
-Sitio web personal y portafolio profesional desarrollado con **Next.js 16 (App Router)**, **React 19** y **Turbopack**.
+Sitio web personal y portafolio profesional de alto nivel desarrollado con **Next.js 16 (App Router)**, **React 19** y **Turbopack**.
 
 🌐 **Sitio en vivo**: [https://noegonzalez.dev](https://noegonzalez.dev)  
-💼 **LinkedIn**: [https://www.linkedin.com/in/ingnoegonzalez/](https://www.linkedin.com/in/ingnoegonzalez/)  
-🐙 **GitHub**: [https://github.com/noergm3](https://github.com/noergm3)
+💼 **LinkedIn**: [https://www.linkedin.com/in/ingnoegonzalez/](https://www.linkedin.com/in/ingnoegonzalez/)
+
+---
+
+## 🎯 Enfoque Profesional & Diferenciador
+
+> *"No solamente construyo interfaces. Construyo sistemas."*
+
+Orientado a reclutadores tecnológicos, empresas internacionales y posiciones **Senior Frontend / React / Next.js / Full Stack**, transmitiendo en los primeros segundos más de una década de experiencia en el desarrollo de sistemas empresariales, plataformas SaaS y arquitecturas de datos de alto rendimiento.
 
 ---
 
 ## 🚀 Características Principales
 
-- **Diseño Moderno & Responsivo**: Estética oscura con detalles dorados neón (`#F7CD00`), optimizada para móviles, tablets y monitores de escritorio.
-- **Efectos Interactivos**: Fondo de partículas reactivas (`tsparticles`) y efectos de scroll parallax (`react-scroll-parallax`).
-- **Máquina de Escribir Dinámica**: Animación en tiempo real que alterna roles profesionales y áreas de especialidad en la sección de inicio.
-- **Datos Centralizados**: Toda la información de perfil, habilidades, proyectos y redes sociales se gestiona desde un único archivo (`src/data/portfolioData.js`), permitiendo actualizar contenidos sin modificar componentes ni estilos.
-- **Sección de Contacto Interactiva**: Incluye botón directo para copiar la dirección de correo al portapapeles con confirmación visual en tiempo real.
-- **SEO & Rendimiento**: Metadatos completos (Open Graph, Twitter Cards), generación automática de sitemap y robots.txt (`next-sitemap`).
+- **Soporte Bilingüe (EN / ES)**: Selector instantáneo de idioma en la Navbar con persistencia local (`useSyncExternalStore`), optimizado para el mercado internacional (inglés por defecto con traducción completa al español).
+- **Hero & Quick Stats**: Título de **Senior Frontend Engineer**, máquina de escribir con roles dinámicos, llamado directo para reclutadores (*Recruiter CTA*) y barra de métricas respaldadas (+10 años experiencia, +5 años React/Next.js, Enterprise & SaaS).
+- **Sobre Mí (Ciclo Completo)**: Enfoque de entrega de extremo a extremo: UI (React/Next.js) → APIs (Node.js/Express) → Bases de Datos (SQL Server/PostgreSQL).
+- **Especialidades Técnicas**: 4 tarjetas visuales de dominio: *Frontend*, *Backend*, *Data* y *Arquitectura*.
+- **Lo Que Puedo Construir (What I Build)**: Aplicaciones empresariales, plataformas SaaS multi-tenant, frontends modernos, sistemas de negocio e integración de APIs.
+- **7 Proyectos & Casos de Negocio Detallados**:
+  1. **Education SaaS Platform** (Multi-Tenancy, RBAC, matrículas, calificaciones, pagos y auditoría).
+  2. **National Education Management Systems** (Experiencia institucional real a nivel nacional, SQL Server).
+  3. **Multi-Tenant ERP & POS** (Operaciones comerciales y aislamiento estricto de datos *Tenant Isolation*).
+  4. **Sales & Inventory Management** (Flujo comercial completo: *Producto → Inventario → Venta → Cliente → Crédito/Abono*).
+  5. **Restaurant POS SaaS** (Estructura de árbol: *Restaurante ├── Sucursales ├── Mesas ├── POS (Cocina KDS | Barra | Insumos)*).
+  6. **Personal Loans & Amortization** (Reglas financieras de negocio y amortización sobre saldo insoluto).
+  7. **Mobile Sales & Inventory (Extensión Móvil)** (Operaciones en ruta y almacén para Android).
+- **Timeline de Experiencia (2012 — 2026)**: Más de 10 años de evolución continua en ingeniería de software.
+- **Arquitectura de Software**: Diagrama visual de 3 capas desacopladas (Presentación, Aplicación y Persistencia).
+- **Seguridad & Gobernanza**: Autenticación JWT, RBAC, aislamiento de tenant, protección de APIs y registros de auditoría inmutables.
+- **Contacto Directo & Reclutadores**: Botón de copiado interactivo de correo electrónico en un clic y enlace a LinkedIn.
 
 ---
 
 ## 🛠️ Stack Tecnológico
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
-- **Biblioteca UI**: [React 19](https://react.dev/)
-- **Estilos**: CSS Modules con variables personalizadas y soporte de scroll suave
-- **Animaciones**: `react-tsparticles`, `tsparticles`, `react-scroll-parallax`
-- **SEO**: `next-sitemap`
-- **Despliegue Continuo**: Integrado con Netlify a través de GitHub
-
----
-
-## 📁 Estructura del Proyecto
-
-```text
-src/
-├── app/
-│   ├── globals.css          # Variables de tema, scrollbar y reset
-│   ├── layout.js            # Metadatos SEO, Open Graph y Google Analytics
-│   └── page.js              # Composición semántica de las secciones
-├── components/
-│   ├── Navbar/              # Barra de navegación fija con efecto blur y menú móvil
-│   ├── HomeSection/         # Hero con typewriter de roles y llamados a la acción
-│   ├── About/               # Perfil profesional, métricas y trayectoria (+10 años)
-│   ├── SkillsSection/       # Habilidades categorizadas (Frontend, Backend, DB, Cloud)
-│   ├── ProjectsSection/     # Tarjetas de proyectos con tags y enlaces a GitHub/Demo
-│   ├── ContactSection/      # Métodos de contacto y copiado rápido de correo
-│   ├── Footer/              # Pie de página con copyright y volver arriba
-│   └── ParticlesBackground/ # Configuración de partículas doradas interactivas
-└── data/
-    └── portfolioData.js     # Fuente única de verdad para datos y proyectos
-```
+- **Framework**: Next.js 16 (App Router, Turbopack)
+- **Biblioteca UI**: React 19
+- **Estilos**: CSS Modules con variables de tema oscuro y acentos dorados (`#F7CD00`)
+- **Efectos & Interactividad**: `tsparticles`, `react-scroll-parallax`
+- **SEO & Sitemaps**: `next-sitemap`
+- **Analytics**: Google Analytics con eventos de interacción personalizados
 
 ---
 
 ## 💻 Desarrollo Local
 
-1. Clona el repositorio e instala las dependencias:
-   ```bash
-   git clone https://github.com/noergm3/Portfolio.git
-   cd Portfolio
-   npm install
-   ```
+```bash
+# Instalar dependencias
+npm install
 
-2. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-   Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+# Servidor de desarrollo
+npm run dev
 
-3. Compilar para producción y generar el sitemap:
-   ```bash
-   npm run build
-   ```
+# Compilar para producción y generar sitemap
+npm run build
 
-4. Ejecutar el linter:
-   ```bash
-   npm run lint
-   ```
-
----
-
-## 📝 Cómo personalizar tus proyectos y datos
-
-Para agregar o modificar tus proyectos, habilidades o información de contacto, solo edita el archivo:
-👉 `src/data/portfolioData.js`
-
-Al guardar y hacer push a GitHub, Netlify desplegará automáticamente la nueva versión.
+# Validar linter
+npm run lint
+```

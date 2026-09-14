@@ -15,38 +15,40 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://noegonzalez.dev"),
   title: {
-    default: "Ing. Noé González | Ingeniero de Software & Full Stack Developer",
-    template: "%s | Ing. Noé González",
+    default: "Noé González Mendoza | Senior Frontend Engineer",
+    template: "%s | Noé González Mendoza",
   },
   description:
-    "Portafolio profesional de Noé González, Ingeniero de Software con más de 10 años de experiencia en desarrollo web, arquitecturas escalables, React, Next.js, Node.js y SQL Server.",
+    "Senior Frontend Engineer specialized in React, Next.js and JavaScript. Building enterprise applications, SaaS platforms and modern web solutions with 10+ years of experience.",
   keywords: [
-    "Noé González",
-    "Ingeniero de Software",
-    "Full Stack Developer",
+    "Noé González Mendoza",
+    "Senior Frontend Engineer",
     "React",
     "Next.js",
+    "JavaScript",
     "Node.js",
+    "SaaS Architecture",
+    "Enterprise Systems",
+    "Full Stack",
     "SQL Server",
-    "Portafolio Desarrollador",
-    "Web Developer",
+    "PostgreSQL",
   ],
-  authors: [{ name: "Noé González", url: "https://noegonzalez.dev" }],
-  creator: "Noé González",
+  authors: [{ name: "Noé González Mendoza", url: "https://noegonzalez.dev" }],
+  creator: "Noé González Mendoza",
   openGraph: {
-    title: "Ing. Noé González | Ingeniero de Software & Full Stack Developer",
+    title: "Noé González Mendoza | Senior Frontend Engineer",
     description:
-      "Portafolio profesional con más de 10 años de experiencia en desarrollo de sistemas, aplicaciones web modernas y bases de datos transaccionales.",
+      "Senior Frontend Engineer specialized in React, Next.js, and enterprise SaaS architectures with 10+ years of experience.",
     url: "https://noegonzalez.dev",
-    siteName: "Portafolio de Noé González",
-    locale: "es_ES",
+    siteName: "Noé González Mendoza Portfolio",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ing. Noé González | Ingeniero de Software & Full Stack Developer",
+    title: "Noé González Mendoza | Senior Frontend Engineer",
     description:
-      "Portafolio profesional con más de 10 años de experiencia en desarrollo web y sistemas.",
+      "Senior Frontend Engineer specialized in React, Next.js and enterprise SaaS architectures.",
   },
   icons: {
     icon: "/favicon.ico",
@@ -55,7 +57,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* Google Analytics */}
         <Script

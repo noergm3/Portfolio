@@ -1,6 +1,6 @@
 .projectsSection {
   padding: 100px 24px;
-  background: linear-gradient(180deg, #1a1a2e 0%, #151525 50%, #1e1e2f 100%);
+  background: linear-gradient(180deg, #171728 0%, #151525 50%, #1a1a2e 100%);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@
 }
 
 .sectionTitle {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 12px;
@@ -35,7 +35,7 @@
 }
 
 .divider {
-  width: 60px;
+  width: 50px;
   height: 4px;
   background: #F7CD00;
   border-radius: 2px;
@@ -43,105 +43,314 @@
 }
 
 .sectionDescription {
-  max-width: 650px;
+  max-width: 680px;
   margin: 0 auto;
   font-size: 1.05rem;
   color: #b8b8c7;
   line-height: 1.6;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 30px 26px;
+.projectsList {
   display: flex;
   flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 36px;
+}
+
+.projectCard {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 34px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
   position: relative;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  background: rgba(247, 205, 0, 0.04);
-  border-color: rgba(247, 205, 0, 0.4);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+.projectCard:hover {
+  background: rgba(247, 205, 0, 0.03);
+  border-color: rgba(247, 205, 0, 0.35);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
 }
 
-.cardTop {
+.enterpriseCard {
+  border-left: 4px solid #0A66C2;
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.cardHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 22px;
+  align-items: flex-start;
 }
 
-.folderIcon {
-  color: #F7CD00;
-}
-
-.actionLinks {
+.typeBadgeRow {
   display: flex;
-  gap: 12px;
-}
-
-.linkIcon {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #c9c9d9;
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  text-decoration: none;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-.linkIcon:hover {
-  background: rgba(247, 205, 0, 0.18);
+.typeBadge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(247, 205, 0, 0.12);
   color: #F7CD00;
-  transform: scale(1.08);
+  border: 1px solid rgba(247, 205, 0, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.tenantBadge {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 .projectTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.65rem;
+  font-weight: 800;
   color: #ffffff;
-  margin-bottom: 12px;
-  line-height: 1.3;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
 }
 
-.projectDescription {
-  font-size: 0.98rem;
+.projectHighlight {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #F7CD00;
+}
+
+/* Flow Diagram */
+.flowDiagramContainer,
+.treeContainer {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.diagramLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a8a8b8;
+  margin-bottom: 10px;
+}
+
+.flowRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.flowStepWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flowNode {
+  background: rgba(247, 205, 0, 0.1);
+  border: 1px solid rgba(247, 205, 0, 0.3);
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.flowArrow {
+  color: #F7CD00;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* Tree Architecture */
+.treeBox {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.84rem;
+  color: #d8d8e6;
+  line-height: 1.8;
+}
+
+.treeRoot {
+  font-weight: 700;
+  color: #F7CD00;
+}
+
+.treeBranch {
+  padding-left: 12px;
+}
+
+.treeSubComponents {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.treeStations {
+  padding-left: 36px;
+  display: flex;
+  flex-direction: column;
+  color: #a0a0b8;
+}
+
+.treeLeaf,
+.treeSubLeaf {
+  display: block;
+}
+
+/* Problem & Solution Grid */
+.problemSolutionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.columnBox {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 18px 16px;
+}
+
+.boxHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.boxDotRed {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4757;
+}
+
+.boxDotGreen {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ed573;
+}
+
+.boxTitle {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.boxText {
+  font-size: 0.94rem;
   color: #b8b8c7;
-  line-height: 1.65;
-  margin-bottom: 24px;
-  flex-grow: 1;
+  line-height: 1.55;
+  margin: 0;
 }
 
-.techStack {
+/* Features */
+.featuresSection,
+.contributionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionSubhead {
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #F7CD00;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 8px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #c9c9d9;
+}
+
+.featureCheck {
+  color: #2ed573;
+  font-weight: 700;
+}
+
+.contributionText {
+  font-size: 0.95rem;
+  color: #d1d1e0;
+  line-height: 1.6;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid #F7CD00;
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Tech Footer */
+.techFooter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  flex-wrap: wrap;
+}
+
+.techLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #a0a0b2;
+}
+
+.techPills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 6px;
 }
 
 .techTag {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #F7CD00;
-  background: rgba(247, 205, 0, 0.08);
-  border: 1px solid rgba(247, 205, 0, 0.2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e5e5f0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 4px 10px;
   border-radius: 6px;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+@media (max-width: 850px) {
+  .problemSolutionGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -150,15 +359,19 @@
   }
 
   .sectionTitle {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
-  .grid {
+  .projectCard {
+    padding: 22px 18px;
+    gap: 18px;
+  }
+
+  .projectTitle {
+    font-size: 1.35rem;
+  }
+
+  .featuresList {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .card {
-    padding: 24px 20px;
   }
 }

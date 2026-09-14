@@ -2,20 +2,20 @@
 
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import { portfolioData } from "@/data/portfolioData";
+import { useLanguage } from "@/context/LanguageContext";
+import * as gtag from "@/lib/gtag";
 
 export default function Navbar() {
+  const { lang, setLang, t, social } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
 
-  // Animación de entrada inicial
   useEffect(() => {
     const timeout = setTimeout(() => setShowNavbar(true), 100);
     return () => clearTimeout(timeout);
   }, []);
 
-  // Detección de scroll para ajustar el blur y fondo del navbar
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 30) {
@@ -28,7 +28,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll suave para enlaces internos
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
     const target = document.querySelector(targetId);
@@ -36,6 +35,24 @@ export default function Navbar() {
       target.scrollIntoView({ behavior: "smooth" });
       setMenuOpen(false);
     }
+  };
+
+  const handleLinkedInClick = () => {
+    gtag.event({
+      action: "click_linkedin",
+      category: "engagement",
+      label: "navbar",
+    });
+  };
+
+  const toggleLanguage = () => {
+    const nextLang = lang === "en" ? "es" : "en";
+    setLang(nextLang);
+    gtag.event({
+      action: "toggle_language",
+      category: "preferences",
+      label: nextLang,
+    });
   };
 
   return (
@@ -49,61 +66,93 @@ export default function Navbar() {
           href="#home"
           onClick={(e) => handleLinkClick(e, "#home")}
           className={styles.logo}
+          aria-label="Noé González - Home"
         >
           <span className={styles.logoBracket}>&lt;</span>
-          NoeGonzalez
+          NoéGonzález
           <span className={styles.logoDot}>.dev</span>
           <span className={styles.logoBracket}> /&gt;</span>
         </a>
 
-        <button
-          className={styles.menuToggle}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
+        <div className={styles.navRightGroup}>
+          <button
+            onClick={toggleLanguage}
+            className={styles.langToggleBtn}
+            type="button"
+            aria-label="Switch language English / Español"
+            title={lang === "en" ? "Cambiar a Español" : "Switch to English"}
+          >
+            <span className={lang === "en" ? styles.langActive : ""}>EN</span>
+            <span className={styles.langDivider}>/</span>
+            <span className={lang === "es" ? styles.langActive : ""}>ES</span>
+          </button>
+
+          <button
+            className={styles.menuToggle}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
 
         <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
           <li>
             <a href="#home" onClick={(e) => handleLinkClick(e, "#home")}>
-              Inicio
+              {t.nav.home}
             </a>
           </li>
           <li>
             <a href="#about" onClick={(e) => handleLinkClick(e, "#about")}>
-              Sobre mí
+              {t.nav.about}
             </a>
           </li>
           <li>
-            <a href="#skills" onClick={(e) => handleLinkClick(e, "#skills")}>
-              Habilidades
+            <a href="#specialties" onClick={(e) => handleLinkClick(e, "#specialties")}>
+              {t.nav.specialties}
             </a>
           </li>
           <li>
             <a href="#projects" onClick={(e) => handleLinkClick(e, "#projects")}>
-              Proyectos
+              {t.nav.projects}
+            </a>
+          </li>
+          <li>
+            <a href="#experience" onClick={(e) => handleLinkClick(e, "#experience")}>
+              {t.nav.experience}
+            </a>
+          </li>
+          <li>
+            <a href="#architecture" onClick={(e) => handleLinkClick(e, "#architecture")}>
+              {t.nav.architecture}
+            </a>
+          </li>
+          <li>
+            <a href="#security" onClick={(e) => handleLinkClick(e, "#security")}>
+              {t.nav.security}
             </a>
           </li>
           <li>
             <a href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>
-              Contacto
+              {t.nav.contact}
             </a>
           </li>
+
           <li className={styles.socialNav}>
             <a
-              href={portfolioData.social.linkedin}
+              href={social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn de Noé González"
+              onClick={handleLinkedInClick}
+              aria-label="LinkedIn Profile"
               title="LinkedIn"
               className={styles.iconLink}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 aria-hidden="true"

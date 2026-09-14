@@ -1,9 +1,11 @@
 "use client";
 
 import styles from "./Footer.module.css";
-import { portfolioData } from "@/data/portfolioData";
+import { useLanguage } from "@/context/LanguageContext";
+import * as gtag from "@/lib/gtag";
 
 export default function Footer() {
+  const { t, social } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const handleScrollToTop = (e) => {
@@ -19,6 +21,14 @@ export default function Footer() {
     }
   };
 
+  const handleLinkedInClick = () => {
+    gtag.event({
+      action: "click_linkedin",
+      category: "engagement",
+      label: "footer",
+    });
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -29,35 +39,46 @@ export default function Footer() {
               Noé González
               <span className={styles.bracket}> /&gt;</span>
             </a>
-            <p className={styles.brandRole}>
-              {portfolioData.personal.role}
-            </p>
+            <p className={styles.brandRole}>{t.footer.tagline}</p>
           </div>
 
-          <nav className={styles.footerNav} aria-label="Navegación del pie de página">
+          <nav className={styles.footerNav} aria-label="Footer Navigation">
             <a href="#home" onClick={(e) => handleLinkClick(e, "#home")}>
-              Inicio
+              {t.nav.home}
             </a>
             <a href="#about" onClick={(e) => handleLinkClick(e, "#about")}>
-              Sobre mí
+              {t.nav.about}
             </a>
-            <a href="#skills" onClick={(e) => handleLinkClick(e, "#skills")}>
-              Habilidades
+            <a href="#specialties" onClick={(e) => handleLinkClick(e, "#specialties")}>
+              {t.nav.specialties}
+            </a>
+            <a href="#what-i-build" onClick={(e) => handleLinkClick(e, "#what-i-build")}>
+              {t.nav.whatIBuild}
             </a>
             <a href="#projects" onClick={(e) => handleLinkClick(e, "#projects")}>
-              Proyectos
+              {t.nav.projects}
+            </a>
+            <a href="#experience" onClick={(e) => handleLinkClick(e, "#experience")}>
+              {t.nav.experience}
+            </a>
+            <a href="#architecture" onClick={(e) => handleLinkClick(e, "#architecture")}>
+              {t.nav.architecture}
+            </a>
+            <a href="#security" onClick={(e) => handleLinkClick(e, "#security")}>
+              {t.nav.security}
             </a>
             <a href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>
-              Contacto
+              {t.nav.contact}
             </a>
           </nav>
 
           <div className={styles.socialIcons}>
             <a
-              href={portfolioData.social.linkedin}
+              href={social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn de Noé González"
+              onClick={handleLinkedInClick}
+              aria-label="LinkedIn Profile"
               className={styles.iconBtn}
             >
               <svg
@@ -73,9 +94,9 @@ export default function Footer() {
 
             <button
               onClick={handleScrollToTop}
-              aria-label="Volver al inicio"
+              aria-label={t.footer.backToTop}
               className={styles.backToTopBtn}
-              title="Volver arriba"
+              title={t.footer.backToTop}
             >
               ↑
             </button>
@@ -84,10 +105,10 @@ export default function Footer() {
 
         <div className={styles.bottomRow}>
           <p className={styles.copyright}>
-            © {currentYear} Noé González. Todos los derechos reservados.
+            © {currentYear} Noé González Mendoza. {t.footer.rights}
           </p>
           <p className={styles.builtWith}>
-            Desarrollado con Next.js, React 19 & Turbopack.
+            Senior Frontend Engineer · React 19 · Next.js 16 · Turbopack
           </p>
         </div>
       </div>

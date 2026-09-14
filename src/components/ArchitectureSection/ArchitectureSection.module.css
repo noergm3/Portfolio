@@ -1,0 +1,262 @@
+.section {
+  padding: 100px 24px;
+  background: linear-gradient(180deg, #1e1e2f 0%, #171728 50%, #151525 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionBadge {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F7CD00;
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.divider {
+  width: 50px;
+  height: 4px;
+  background: #F7CD00;
+  border-radius: 2px;
+  margin: 0 auto 16px auto;
+}
+
+.sectionDescription {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #b8b8c7;
+  line-height: 1.6;
+}
+
+/* Diagram Card */
+.diagramCard {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(247, 205, 0, 0.25);
+  border-radius: 18px;
+  padding: 36px 24px;
+  margin-bottom: 48px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.diagramGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.diagramNode {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 22px 18px;
+  transition: all 0.25s ease;
+}
+
+.diagramNode:hover {
+  border-color: #F7CD00;
+  background: rgba(247, 205, 0, 0.05);
+  transform: translateY(-3px);
+}
+
+.nodeHeader {
+  margin-bottom: 10px;
+}
+
+.nodeBadge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #F7CD00;
+  margin-bottom: 4px;
+}
+
+.nodeTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.nodeBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nodeTech {
+  font-size: 0.8rem;
+  color: #F7CD00;
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 600;
+}
+
+.nodeDetail {
+  font-size: 0.82rem;
+  color: #a8a8b8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Connector */
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+.connectorLine {
+  width: 32px;
+  height: 2px;
+  background: rgba(247, 205, 0, 0.4);
+}
+
+.connectorLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #a0a0b2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  margin: 4px 0;
+}
+
+.connectorArrow {
+  color: #F7CD00;
+  font-size: 0.75rem;
+  margin-left: 2px;
+}
+
+/* Tiers Grid */
+.tiersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tierCard {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.tierCard:hover {
+  background: rgba(247, 205, 0, 0.03);
+  border-color: rgba(247, 205, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.tierHeader {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tierNumber {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #F7CD00;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.tierTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.tierTech {
+  font-size: 0.8rem;
+  color: #a8a8b8;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.tierPoints {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tierPoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #c9c9d9;
+  line-height: 1.5;
+}
+
+.pointCheck {
+  color: #F7CD00;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 950px) {
+  .diagramGrid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .connector {
+    transform: rotate(90deg);
+    margin: 8px 0;
+  }
+
+  .tiersGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .sectionTitle {
+    font-size: 2.1rem;
+  }
+
+  .diagramCard {
+    padding: 20px 14px;
+  }
+}
