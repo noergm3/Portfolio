@@ -1489,7 +1489,6 @@ export const portfolioData = {
   social: {
     email: "noergm3@gmail.com",
     linkedin: "https://www.linkedin.com/in/ingnoegonzalez/",
-    github: "https://github.com/noergm3",
     siteUrl: "https://noegonzalez.dev",
     resumeUrl: "/Noe-Gonzalez-Mendoza-Resume.pdf",
     location: "Managua, Nicaragua",
