@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import * as gtag from "@/lib/gtag";
 
 export default function Footer() {
-  const { t, social } = useLanguage();
+  const { lang, t, social } = useLanguage();
   const currentYear = new Date().getFullYear();
   const pathname = usePathname();
 
@@ -101,14 +101,14 @@ export default function Footer() {
             </a>
 
             <a
-              href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
-              download="Noe-Gonzalez-Mendoza-Resume.pdf"
+              href={lang === "es" ? (social.resumeUrlEs || "/Noe-Gonzalez-Mendoza-CV-ES.pdf") : (social.resumeUrlEn || "/Noe-Gonzalez-Mendoza-Resume-EN.pdf")}
+              download={lang === "es" ? "Noe-Gonzalez-Mendoza-CV-ES.pdf" : "Noe-Gonzalez-Mendoza-Resume-EN.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleResumeClick}
-              aria-label="Download Resume PDF"
+              aria-label={lang === "es" ? "Descargar CV en Español" : "Download Resume in English"}
               className={styles.iconBtn}
-              title="Download Resume (PDF)"
+              title={lang === "es" ? "Descargar CV (Español)" : "Download Resume (English)"}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import * as gtag from "@/lib/gtag";
 
 export default function HomeSection() {
-  const { t, social } = useLanguage();
+  const { lang, t, social } = useLanguage();
   const [typedName, setTypedName] = useState("");
   const [roleText, setRoleText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
@@ -68,8 +68,8 @@ export default function HomeSection() {
     gtag.trackLinkedInClick("hero");
   };
 
-  const handleResumeClick = () => {
-    gtag.trackResumeDownload("hero");
+  const handleResumeClick = (version = lang) => {
+    gtag.trackResumeDownload(`hero_${version}`);
   };
 
   return (
@@ -149,31 +149,46 @@ export default function HomeSection() {
             <span>{t.hero.btnContact}</span>
           </a>
 
-          <a
-            href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
-            download="Noe-Gonzalez-Mendoza-Resume.pdf"
-            onClick={handleResumeClick}
-            className={styles.resumeButton}
-            aria-label={t.hero.btnResume || "Download Resume"}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+          <div className={styles.resumeButtonGroup}>
+            <a
+              href={lang === "es" ? (social.resumeUrlEs || "/Noe-Gonzalez-Mendoza-CV-ES.pdf") : (social.resumeUrlEn || "/Noe-Gonzalez-Mendoza-Resume-EN.pdf")}
+              download={lang === "es" ? "Noe-Gonzalez-Mendoza-CV-ES.pdf" : "Noe-Gonzalez-Mendoza-Resume-EN.pdf"}
+              onClick={() => handleResumeClick(lang)}
+              className={styles.resumeButton}
+              aria-label={lang === "es" ? "Descargar CV en Español" : "Download Resume in English"}
+              title={lang === "es" ? "Descargar CV en Español" : "Download Resume in English"}
             >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span>{t.hero.btnResume || "Download Resume"}</span>
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>{t.hero.btnResume || "Download Resume"}</span>
+              <span className={styles.resumeLangTag}>{lang === "es" ? "ES" : "EN"}</span>
+            </a>
+
+            <a
+              href={lang === "es" ? (social.resumeUrlEn || "/Noe-Gonzalez-Mendoza-Resume-EN.pdf") : (social.resumeUrlEs || "/Noe-Gonzalez-Mendoza-CV-ES.pdf")}
+              download={lang === "es" ? "Noe-Gonzalez-Mendoza-Resume-EN.pdf" : "Noe-Gonzalez-Mendoza-CV-ES.pdf"}
+              onClick={() => handleResumeClick(lang === "es" ? "en" : "es")}
+              className={styles.resumeAltLangBtn}
+              aria-label={lang === "es" ? "Descargar versión en Inglés" : "Descargar versión en Español"}
+              title={lang === "es" ? "Descargar versión en Inglés (EN)" : "Download Spanish version (ES)"}
+            >
+              {lang === "es" ? "EN" : "ES"}
+            </a>
+          </div>
 
           <a
             href={social.linkedin}

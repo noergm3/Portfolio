@@ -41,7 +41,8 @@ export const portfolioData = {
       btnContact: "Contact Me",
       btnLinkedin: "LinkedIn Profile",
       btnResume: "Download Resume",
-      resumeUrl: "/Noe-Gonzalez-Mendoza-Resume.pdf",
+      resumeUrl: "/Noe-Gonzalez-Mendoza-Resume-EN.pdf",
+      resumeFilename: "Noe-Gonzalez-Mendoza-Resume-EN.pdf",
       stats: [
         { value: "10+", label: "Years Experience", detail: "Software Engineering" },
         { value: "5+", label: "Years React / Next.js", detail: "Specialized Modern Frontend" },
@@ -784,7 +785,8 @@ export const portfolioData = {
       btnContact: "Contáctame",
       btnLinkedin: "Perfil de LinkedIn",
       btnResume: "Descargar CV",
-      resumeUrl: "/Noe-Gonzalez-Mendoza-Resume.pdf",
+      resumeUrl: "/Noe-Gonzalez-Mendoza-CV-ES.pdf",
+      resumeFilename: "Noe-Gonzalez-Mendoza-CV-ES.pdf",
       stats: [
         { value: "10+", label: "Años Experiencia", detail: "Ingeniería de Software" },
         { value: "5+", label: "Años React / Next.js", detail: "Frontend Moderno Especializado" },
@@ -1490,7 +1492,9 @@ export const portfolioData = {
     email: "noergm3@gmail.com",
     linkedin: "https://www.linkedin.com/in/ingnoegonzalez/",
     siteUrl: "https://noegonzalez.dev",
-    resumeUrl: "/Noe-Gonzalez-Mendoza-Resume.pdf",
+    resumeUrl: "/Noe-Gonzalez-Mendoza-Resume-EN.pdf",
+    resumeUrlEn: "/Noe-Gonzalez-Mendoza-Resume-EN.pdf",
+    resumeUrlEs: "/Noe-Gonzalez-Mendoza-CV-ES.pdf",
     location: "Managua, Nicaragua",
   },
 };

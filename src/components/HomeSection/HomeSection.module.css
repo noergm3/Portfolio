@@ -260,6 +260,51 @@
   box-shadow: 0 6px 20px rgba(247, 205, 0, 0.35);
 }
 
+.resumeButtonGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resumeLangTag {
+  background: rgba(247, 205, 0, 0.2);
+  color: #F7CD00;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-left: 2px;
+}
+
+.resumeButton:hover .resumeLangTag {
+  background: #0f0f1a;
+  color: #F7CD00;
+}
+
+.resumeAltLangBtn {
+  padding: 13px 14px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.04);
+  color: #c9c9d9;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.resumeAltLangBtn:hover {
+  background: rgba(247, 205, 0, 0.15);
+  border-color: #F7CD00;
+  color: #F7CD00;
+  transform: translateY(-2px);
+}
+
 .locationBadge {
   margin-top: 6px;
   margin-bottom: 10px;

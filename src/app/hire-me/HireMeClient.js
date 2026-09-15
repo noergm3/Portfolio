@@ -25,8 +25,8 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
     gtag.trackLinkedInClick("hire_me_page");
   };
 
-  const handleResume = () => {
-    gtag.trackResumeDownload("hire_me_page");
+  const handleResume = (version = "en") => {
+    gtag.trackResumeDownload(`hire_me_page_${version}`);
   };
 
   // Top 4 enterprise/SaaS systems for quick evaluation
@@ -76,14 +76,26 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
               {hireData.cta?.btnLinkedIn || "Connect on LinkedIn"}
             </a>
             <a
-              href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
-              download="Noe-Gonzalez-Mendoza-Resume.pdf"
+              href="/Noe-Gonzalez-Mendoza-Resume-EN.pdf"
+              download="Noe-Gonzalez-Mendoza-Resume-EN.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={handleResume}
+              onClick={() => handleResume("en")}
               className={styles.btnSecondary}
+              title="Download Resume in English"
             >
-              {hireData.cta?.btnResume || "Download Resume (PDF)"}
+              📄 Resume (EN)
+            </a>
+            <a
+              href="/Noe-Gonzalez-Mendoza-CV-ES.pdf"
+              download="Noe-Gonzalez-Mendoza-CV-ES.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => handleResume("es")}
+              className={styles.btnSecondary}
+              title="Descargar CV en Español"
+            >
+              📄 CV (ES)
             </a>
             <button
               onClick={handleCopyEmail}
@@ -192,14 +204,26 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
               {hireData.cta?.btnEmail || "Email Directly"}
             </a>
             <a
-              href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
-              download="Noe-Gonzalez-Mendoza-Resume.pdf"
+              href="/Noe-Gonzalez-Mendoza-Resume-EN.pdf"
+              download="Noe-Gonzalez-Mendoza-Resume-EN.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={handleResume}
+              onClick={() => handleResume("en")}
               className={styles.btnSecondary}
+              title="Download Resume in English"
             >
-              {hireData.cta?.btnResume || "Download Resume (PDF)"}
+              📄 Resume (EN)
+            </a>
+            <a
+              href="/Noe-Gonzalez-Mendoza-CV-ES.pdf"
+              download="Noe-Gonzalez-Mendoza-CV-ES.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => handleResume("es")}
+              className={styles.btnSecondary}
+              title="Descargar CV en Español"
+            >
+              📄 CV (ES)
             </a>
           </div>
         </div>
