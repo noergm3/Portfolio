@@ -29,6 +29,9 @@ export default function ProjectsSection() {
                 <div className={styles.titleGroup}>
                   <div className={styles.typeBadgeRow}>
                     <span className={styles.typeBadge}>{proj.type}</span>
+                    {proj.status && (
+                      <span className={styles.statusBadge}>✓ {proj.status}</span>
+                    )}
                     {proj.tenantIsolationNotice && (
                       <span className={styles.tenantBadge}>
                         🛡️ {proj.tenantIsolationNotice}
@@ -121,16 +124,28 @@ export default function ProjectsSection() {
                 <p className={styles.contributionText}>{proj.contribution}</p>
               </div>
 
-              {/* Technologies */}
+              {/* Technologies & Case Study Link */}
               <div className={styles.techFooter}>
-                <span className={styles.techLabel}>{projects.labels.tech}:</span>
-                <div className={styles.techPills}>
-                  {proj.technologies.map((tech, tIdx) => (
-                    <span key={tIdx} className={styles.techTag}>
-                      {tech}
-                    </span>
-                  ))}
+                <div className={styles.techLeft}>
+                  <span className={styles.techLabel}>{projects.labels.tech}:</span>
+                  <div className={styles.techPills}>
+                    {proj.technologies.map((tech, tIdx) => (
+                      <span key={tIdx} className={styles.techTag}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
+                {proj.slug && (
+                  <a
+                    href={`/projects/${proj.slug}`}
+                    className={styles.caseStudyLink}
+                    aria-label={`${projects.labels.btnCaseStudy} ${proj.title}`}
+                  >
+                    <span>{projects.labels.btnCaseStudy || "View Case Study →"}</span>
+                  </a>
+                )}
               </div>
             </article>
           ))}

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 import { useLanguage } from "@/context/LanguageContext";
 import * as gtag from "@/lib/gtag";
@@ -10,6 +12,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const timeout = setTimeout(() => setShowNavbar(true), 100);
@@ -29,31 +32,32 @@ export default function Navbar() {
   }, []);
 
   const handleLinkClick = (e, targetId) => {
-    e.preventDefault();
-    const target = document.querySelector(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false);
+    setMenuOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    // If not on homepage, default browser behavior handles navigating to /#targetId
   };
 
   const handleLinkedInClick = () => {
-    gtag.event({
-      action: "click_linkedin",
-      category: "engagement",
-      label: "navbar",
-    });
+    gtag.trackLinkedInClick("navbar");
+  };
+
+  const handleGitHubClick = () => {
+    gtag.trackGitHubClick("navbar");
   };
 
   const toggleLanguage = () => {
     const nextLang = lang === "en" ? "es" : "en";
     setLang(nextLang);
-    gtag.event({
-      action: "toggle_language",
-      category: "preferences",
-      label: nextLang,
-    });
+    gtag.trackLanguageChange(nextLang);
   };
+
+  const homeHref = (hash) => (pathname === "/" ? hash : `/${hash}`);
 
   return (
     <nav
@@ -63,7 +67,7 @@ export default function Navbar() {
     >
       <div className={styles.navbarContainer}>
         <a
-          href="#home"
+          href={homeHref("#home")}
           onClick={(e) => handleLinkClick(e, "#home")}
           className={styles.logo}
           aria-label="Noé González - Home"
@@ -75,6 +79,17 @@ export default function Navbar() {
         </a>
 
         <div className={styles.navRightGroup}>
+          <Link
+            href="/hire-me"
+            className={styles.hireMeMobileBadge}
+            onClick={() => {
+              setMenuOpen(false);
+              gtag.trackContactCTA("navbar_mobile_hire_me");
+            }}
+          >
+            ⚡ {t.nav.hireMe || "Hire Me"}
+          </Link>
+
           <button
             onClick={toggleLanguage}
             className={styles.langToggleBtn}
@@ -107,47 +122,80 @@ export default function Navbar() {
 
         <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
           <li>
-            <a href="#home" onClick={(e) => handleLinkClick(e, "#home")}>
+            <a href={homeHref("#home")} onClick={(e) => handleLinkClick(e, "#home")}>
               {t.nav.home}
             </a>
           </li>
           <li>
-            <a href="#about" onClick={(e) => handleLinkClick(e, "#about")}>
+            <a href={homeHref("#about")} onClick={(e) => handleLinkClick(e, "#about")}>
               {t.nav.about}
             </a>
           </li>
           <li>
-            <a href="#specialties" onClick={(e) => handleLinkClick(e, "#specialties")}>
+            <a href={homeHref("#specialties")} onClick={(e) => handleLinkClick(e, "#specialties")}>
               {t.nav.specialties}
             </a>
           </li>
           <li>
-            <a href="#projects" onClick={(e) => handleLinkClick(e, "#projects")}>
+            <a href={homeHref("#projects")} onClick={(e) => handleLinkClick(e, "#projects")}>
               {t.nav.projects}
             </a>
           </li>
           <li>
-            <a href="#experience" onClick={(e) => handleLinkClick(e, "#experience")}>
-              {t.nav.experience}
-            </a>
-          </li>
-          <li>
-            <a href="#architecture" onClick={(e) => handleLinkClick(e, "#architecture")}>
+            <a href={homeHref("#architecture")} onClick={(e) => handleLinkClick(e, "#architecture")}>
               {t.nav.architecture}
             </a>
           </li>
           <li>
-            <a href="#security" onClick={(e) => handleLinkClick(e, "#security")}>
-              {t.nav.security}
-            </a>
+            <Link
+              href="/engineering"
+              onClick={() => setMenuOpen(false)}
+              className={pathname.startsWith("/engineering") ? styles.activeNavLink : ""}
+            >
+              {t.nav.engineering || "Engineering"}
+            </Link>
           </li>
           <li>
-            <a href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>
+            <Link
+              href="/hire-me"
+              onClick={() => {
+                setMenuOpen(false);
+                gtag.trackContactCTA("navbar_hire_me");
+              }}
+              className={styles.hireMePill}
+            >
+              ⚡ {t.nav.hireMe || "Hire Me"}
+            </Link>
+          </li>
+          <li>
+            <a href={homeHref("#contact")} onClick={(e) => handleLinkClick(e, "#contact")}>
               {t.nav.contact}
             </a>
           </li>
 
           <li className={styles.socialNav}>
+            {social.github && (
+              <a
+                href={social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleGitHubClick}
+                aria-label="GitHub Profile"
+                title="GitHub"
+                className={styles.iconLink}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            )}
             <a
               href={social.linkedin}
               target="_blank"

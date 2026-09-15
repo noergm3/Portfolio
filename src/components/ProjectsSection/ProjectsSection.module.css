@@ -317,9 +317,17 @@
 .techFooter {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 14px;
   padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.07);
+  flex-wrap: wrap;
+}
+
+.techLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -345,6 +353,39 @@
   padding: 4px 10px;
   border-radius: 6px;
   font-family: var(--font-geist-mono), monospace;
+}
+
+.caseStudyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f0f1a;
+  background: #F7CD00;
+  border: 1px solid #F7CD00;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.caseStudyLink:hover {
+  background: #ffd700;
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(247, 205, 0, 0.35);
+}
+
+.statusBadge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #2ed573;
+  background: rgba(46, 213, 115, 0.1);
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 850px) {

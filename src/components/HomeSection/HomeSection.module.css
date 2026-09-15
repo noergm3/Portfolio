@@ -236,6 +236,40 @@
   box-shadow: 0 6px 18px rgba(10, 102, 194, 0.4);
 }
 
+.resumeButton {
+  padding: 13px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  background: rgba(247, 205, 0, 0.08);
+  color: #F7CD00;
+  border: 1px solid rgba(247, 205, 0, 0.4);
+}
+
+.resumeButton:hover {
+  background: #F7CD00;
+  color: #0f0f1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(247, 205, 0, 0.35);
+}
+
+.locationBadge {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #a5a5bc;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* Quick Stats Bar */
 .statsBar {
   margin-top: 50px;

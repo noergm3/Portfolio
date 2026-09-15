@@ -1,9 +1,9 @@
 export const portfolioData = {
   en: {
     meta: {
-      title: "Noé González Mendoza | Senior Frontend Engineer",
+      title: "Noé González Mendoza | Senior Frontend Engineer | React & Next.js",
       description:
-        "Senior Frontend Engineer with 10+ years of experience specialized in React, Next.js, and enterprise SaaS architectures. Building robust, scalable, and intuitive software systems.",
+        "Senior Frontend Engineer with 10+ years of experience building React, Next.js, enterprise applications and SaaS platforms.",
     },
     nav: {
       home: "Home",
@@ -14,10 +14,17 @@ export const portfolioData = {
       experience: "Experience",
       architecture: "Architecture",
       security: "Security",
+      engineering: "Engineering Notes",
+      hireMe: "Hire Me",
       contact: "Contact",
+      resume: "Resume",
     },
     hero: {
-      availability: "Available for Senior Frontend & Full Stack roles · Remote",
+      availability: "Available for Remote Senior Frontend Opportunities",
+      location: "Managua, Nicaragua",
+      remoteBadge: "Available for Remote Senior Frontend Opportunities",
+      remoteSubtag: "Based in Managua, Nicaragua · Open to global remote teams",
+      positioningStatement: "Building modern frontends backed by real business systems.",
       titlePrefix: "Ing.",
       name: "Noé González Mendoza",
       mainRole: "Senior Frontend Engineer",
@@ -33,6 +40,8 @@ export const portfolioData = {
       btnProjects: "View Projects",
       btnContact: "Contact Me",
       btnLinkedin: "LinkedIn Profile",
+      btnResume: "Download Resume",
+      resumeUrl: "/Noe-Gonzalez-Mendoza-Resume.pdf",
       stats: [
         { value: "10+", label: "Years Experience", detail: "Software Engineering" },
         { value: "5+", label: "Years React / Next.js", detail: "Specialized Modern Frontend" },
@@ -94,13 +103,13 @@ export const portfolioData = {
             "Authentication (JWT)",
             "Authorization (RBAC)",
             "API Security & Middleware",
-            "Microservices Integration",
+            "Decoupled Services",
           ],
         },
         {
           id: "data",
-          title: "Data & Storage",
-          description: "Transactional integrity, complex queries, and relational design.",
+          title: "Databases & Persistence",
+          description: "Transactional integrity, query optimization, and relational schema modeling.",
           skills: [
             "SQL Server",
             "PostgreSQL",
@@ -108,45 +117,44 @@ export const portfolioData = {
             "Prisma ORM",
             "Advanced SQL & T-SQL",
             "Stored Procedures",
-            "Relational Data Modeling",
+            "Relational Modeling",
           ],
         },
         {
           id: "architecture",
           title: "Architecture & SaaS",
-          description: "Designing systems built to scale securely across organizations.",
+          description: "Designing systems ready to scale across organizations and tenants.",
           skills: [
-            "SaaS Architecture",
-            "Multi-Tenancy",
-            "Tenant Isolation",
-            "Role-Based Access Control",
-            "Enterprise Applications",
-            "Audit Logging",
-            "CI/CD & Cloud Deployment",
+            "SaaS Multi-Tenancy",
+            "Tenant Data Isolation",
+            "Role-Based Access Control (RBAC)",
+            "Enterprise Systems",
+            "Activity Audit Logging",
+            "Deployment & Hosting",
           ],
         },
       ],
     },
     whatIBuild: {
-      badge: "Capabilities & Value",
+      badge: "Delivery Capabilities",
       title: "What I Build",
       subtitle:
-        "Bridging domain requirements with production-ready software architecture.",
+        "Bridging complex business requirements into production-ready software architectures.",
       items: [
         {
           title: "Enterprise Applications",
           description:
-            "Robust management software, administrative platforms, and high-concurrency systems tailored to demanding organizational workflows.",
+            "High-reliability administrative systems and business management platforms tailored to complex workflows and institutional rules.",
         },
         {
           title: "SaaS Platforms",
           description:
-            "Multi-tenant architectures featuring complete tenant data isolation, user subscriptions, dynamic role permissions, and scalable modularity.",
+            "Multi-tenant web applications with strict data isolation between organizational accounts, tiered subscriptions, and role-based permissions.",
         },
         {
           title: "Modern Frontends",
           description:
-            "Lightning-fast, accessible, and maintainable React & Next.js web applications with responsive design and elegant component architecture.",
+            "Fast, reactive, and accessible web interfaces built with React and Next.js, featuring component-driven modularity and responsive layouts.",
         },
         {
           title: "Business Systems",
@@ -177,12 +185,19 @@ export const portfolioData = {
         badgeMobile: "Mobile Extension",
         diagramFlow: "Commercial Operational Flow:",
         diagramTree: "Multi-Branch Hierarchical Structure:",
+        btnCaseStudy: "View Case Study →",
+        statusLabel: "Status",
+        challengesLabel: "Engineering Challenges",
+        architectureLabel: "Architecture & Design",
+        backToProjects: "← Back to Projects",
       },
       list: [
         {
           id: "education-saas",
+          slug: "education-saas",
           title: "Education SaaS Platform",
           type: "Multi-Tenant SaaS",
+          status: "Production · Multi-Tenant SaaS",
           highlight: "Comprehensive Multi-Tenant School & Academy Management",
           problem:
             "Educational institutions often struggle with fragmented management tools for academic rosters, grading, tuition billing, and parent communication, lacking scalable data isolation between campuses.",
@@ -210,21 +225,30 @@ export const portfolioData = {
           ],
           contribution:
             "Architected the full frontend with Next.js/React and Material UI, implemented the JWT-based RBAC authorization layer, designed relational schemas in Prisma/PostgreSQL, and built core grading and enrollment modules.",
+          engineeringChallenges: [
+            "Ensuring zero cross-tenant data contamination across all database queries via tenant context middleware.",
+            "Handling complex institutional grading scales with weighted evaluations and dynamic report card generation.",
+            "Optimizing UI responsiveness with Next.js client-side caching during high-frequency tuition checkout periods.",
+          ],
+          architectureDetails:
+            "Next.js SSR/SSG frontend connected to a modular Node.js/Express service. Uses PostgreSQL with Prisma ORM where every tenant schema is logically segregated. JWT tokens encode tenant ID and RBAC permissions.",
         },
         {
           id: "national-education",
+          slug: "national-education-systems",
           title: "National Education Management Systems",
           type: "Real Enterprise Experience",
+          status: "Professional Experience · Institutional Scale",
           highlight: "Mission-Critical Institutional Administrative & Academic Ecosystem",
           problem:
-            "Large-scale national educational infrastructure required modernized, highly reliable systems to process academic records, teacher allocations, and student tracking across numerous centers with strict regulatory compliance.",
+            "Large-scale national educational infrastructure required modernized, highly reliable systems to process academic records, teacher allocations, and student tracking across numerous centers with strict institutional security standards.",
           solution:
-            "Developed and evolved core institutional administrative systems handling sensitive academic registries with center-based permission barriers and high-concurrency database operations.",
+            "Developed and evolved core institutional administrative systems handling sensitive academic registries with center-based permission barriers and high-performance database operations.",
           features: [
             "Institutional Administration & School Cycles",
             "Official Academic Registry & Certifications",
             "User & Role Management with Center Assignment Restrictions",
-            "High-Security Standards & Regulatory Compliance",
+            "High-Security Standards & Governance Compliance",
             "Seamless Frontend to Backend Enterprise Integration",
             "Optimized Relational Queries for Heavy Workloads",
           ],
@@ -239,12 +263,21 @@ export const portfolioData = {
             "Enterprise Security",
           ],
           contribution:
-            "Contributed to frontend development and backend API integration, engineered center-level security restrictions, and optimized critical SQL Server stored procedures for report generation without compromising sensitive national data.",
+            "Contributed to frontend development and backend API integration, engineered center-level security restrictions, and optimized critical SQL Server stored procedures for report generation without compromising sensitive data.",
+          engineeringChallenges: [
+            "Enforcing strict center-level boundaries so administrative users only access their assigned educational center records.",
+            "Heavy academic cycle reporting across large relational databases without performance degradation.",
+            "Coordinating frontend React modules with institutional enterprise services without exposing internal infrastructure.",
+          ],
+          architectureDetails:
+            "Decoupled React & Next.js frontend consuming secure REST endpoints backed by high-throughput SQL Server databases. Complex business rules enforced at both API middleware and optimized T-SQL stored procedures.",
         },
         {
           id: "multi-tenant-erp",
+          slug: "multi-tenant-erp-pos",
           title: "Multi-Tenant ERP & POS",
           type: "Multi-Tenant SaaS",
+          status: "Production · Multi-Tenant ERP",
           highlight: "Commercial Operations & Tenant Data Isolation",
           tenantIsolationNotice: "Strict Tenant Isolation Architecture",
           problem:
@@ -270,12 +303,21 @@ export const portfolioData = {
             "JWT",
           ],
           contribution:
-            "Designed the tenant resolution middleware, implemented reactive dashboard UI components with Next.js, and formulated safe SQL partitioning ensuring absolute data privacy between client companies.",
+            "Designed the tenant resolution middleware, implemented reactive dashboard UI components with Next.js, and formulated safe SQL partitioning ensuring strict data privacy between client companies.",
+          engineeringChallenges: [
+            "Multi-company hierarchy with independent branch configurations and unified barcode resolution.",
+            "Fast POS checkout with optimistic client updates and sub-second receipt dispatch.",
+            "Audit trail recording immutable ledger changes for every sale, refund, and stock movement.",
+          ],
+          architectureDetails:
+            "Multi-tenant architecture resolving organization headers per request. Relational database with partitioned schemas and strict RBAC ensuring users only access their authorized company branch.",
         },
         {
           id: "sales-inventory",
+          slug: "sales-inventory",
           title: "Sales & Inventory Management",
           type: "Business Critical",
+          status: "Production · Business Critical",
           highlight: "Commercial Flow with Integrated Credit & Expiration Tracking",
           flowDiagram: [
             "Product Catalog",
@@ -306,11 +348,20 @@ export const portfolioData = {
           ],
           contribution:
             "Developed the end-to-end user experience, built the transactional credit ledger engine, and implemented batch-level stock depletion algorithms.",
+          engineeringChallenges: [
+            "Real-time FIFO batch expiration tracking preventing revenue loss on expiring inventory.",
+            "Dynamic customer credit balance reconciliation with automatic credit-line locks upon overdue debt.",
+            "Instant barcode scanner integration in web UI without input lag.",
+          ],
+          architectureDetails:
+            "React client with optimized state management for rapid Point of Sale operations. Node.js backend executing transactional stock deductions within ACID database boundaries.",
         },
         {
           id: "restaurant-pos",
+          slug: "restaurant-pos",
           title: "Restaurant POS SaaS",
           type: "Multi-Tenant SaaS",
+          status: "Production · Hospitality SaaS",
           highlight: "Branches, Table Management, Kitchen KDS & Bar Operations",
           treeArchitecture: {
             root: "Restaurant Brand",
@@ -339,11 +390,20 @@ export const portfolioData = {
           ],
           contribution:
             "Implemented the real-time order dispatch board, dynamic table mapping UI, and multi-branch role configuration.",
+          engineeringChallenges: [
+            "Real-time synchronization between table ordering, kitchen display screens (KDS), and cash register.",
+            "Split bills and itemized modifications under high-noise, high-speed restaurant environment.",
+            "Automated stock depletion calculated from recipe ingredients on order submission.",
+          ],
+          architectureDetails:
+            "Interactive visual floor plan with event-driven updates. Cloud-hosted PostgreSQL database handling branch orders with dedicated roles for waiters, cooks, and cashiers.",
         },
         {
           id: "personal-loans",
+          slug: "personal-loans",
           title: "Personal Loans & Amortization Engine",
           type: "Business Critical",
+          status: "Verified Calculation Engine · Financial Module",
           highlight: "Financial Business Rules & Diminishing Balance Amortization",
           problem:
             "Custom lending and credit businesses require strict, verifiable mathematical computations for diminishing balance interest, irregular payments, and default penalties.",
@@ -365,11 +425,20 @@ export const portfolioData = {
           ],
           contribution:
             "Engineered the core financial logic and formulas, built interactive simulation tables with real-time recalculations, and designed database audit constraints.",
+          engineeringChallenges: [
+            "Mathematical precision in diminishing-balance interest algorithms avoiding floating-point discrepancies.",
+            "Dynamic amortization table generation with support for bi-weekly, monthly, and custom payment schedules.",
+            "Capital prepayment logic dynamically recalculating future interest and remaining installments.",
+          ],
+          architectureDetails:
+            "Specialized financial computation engine built with pure JavaScript logic on the frontend and validated with atomic database transactions to guarantee ledger consistency.",
         },
         {
           id: "mobile-sales",
+          slug: "mobile-sales-inventory",
           title: "Mobile Sales & Inventory (Mobile Extension)",
           type: "Mobile Extension",
+          status: "Production · Android Companion Extension",
           highlight: "Extending Enterprise Sales & Stock Operations to Android",
           problem:
             "Field sales reps and warehouse staff needed on-the-go access to inventory availability, client balances, and mobile invoice generation without carrying bulky hardware.",
@@ -379,8 +448,8 @@ export const portfolioData = {
             "On-the-Go Product Catalog & Stock Check",
             "Mobile Order Capture & Direct Invoicing",
             "Customer Credit Ledger Lookup in the Field",
-            "Lightweight Offline-Tolerant Architecture",
-            "Bluetooth Receipt Printing & Barcode Capture",
+            "Optimized Mobile Connectivity & Efficient Sync",
+            "Barcode Capture & Ticket Receipt Printing",
           ],
           technologies: [
             "Android Integration",
@@ -391,6 +460,13 @@ export const portfolioData = {
           ],
           contribution:
             "Designed the responsive mobile interfaces, architected synchronization endpoints in the backend, and integrated field barcode scanning workflows.",
+          engineeringChallenges: [
+            "Low-latency API sync over fluctuating mobile data connections in delivery routes.",
+            "Barcode scanning and mobile thermal receipt printing integration in warehouse operations.",
+            "Efficient state reconciliation with central stock upon reconnect.",
+          ],
+          architectureDetails:
+            "Hybrid mobile frontend communicating with the central ERP REST API, designed for route salespeople and warehouse operators.",
         },
       ],
     },
@@ -414,13 +490,13 @@ export const portfolioData = {
         },
         {
           period: "2020 — 2023",
-          role: "Modern Frontend & Full Stack Specialization",
+          role: "Modern Frontend Specialization & Full Stack Systems",
           focus:
             "Transitioning enterprise applications to modern web ecosystems using React, Next.js, and Node.js. Building intuitive user experiences and high-throughput REST APIs.",
         },
         {
           period: "2023 — Present",
-          role: "Senior Frontend Engineer & SaaS Architecture",
+          role: "Senior Frontend Engineer & SaaS Architectures",
           focus:
             "Architecting multi-tenant SaaS platforms, modernizing legacy enterprise systems, implementing strict RBAC security frameworks, and building scalable remote-first web solutions.",
         },
@@ -512,7 +588,7 @@ export const portfolioData = {
         {
           title: "Audit Logging",
           description:
-            "Immutable audit trails recording user actions, state changes, and security events for compliance.",
+            "Audit trails recording user actions, state changes, and security events for governance and compliance.",
         },
         {
           title: "Center & Scope Restrictions",
@@ -533,7 +609,7 @@ export const portfolioData = {
         },
         {
           category: "Backend",
-          items: ["Node.js", "Express.js", "RESTful APIs", "JWT Authentication", "Middleware Design", "Microservices"],
+          items: ["Node.js", "Express.js", "RESTful APIs", "JWT Authentication", "Middleware Design", "Decoupled Services"],
         },
         {
           category: "Database & Data",
@@ -542,6 +618,102 @@ export const portfolioData = {
         {
           category: "Architecture & DevOps",
           items: ["SaaS Multi-Tenancy", "Tenant Isolation", "RBAC Security", "Git & Version Control", "Docker Basics", "Netlify / Vercel"],
+        },
+      ],
+    },
+    hireMe: {
+      badge: "Recruiter Briefing",
+      title: "Hire Noé González Mendoza",
+      subtitle: "Senior Frontend Engineer · React & Next.js · Enterprise Systems & SaaS",
+      lead: "10+ years of software engineering experience. Deep specialization in modern React/Next.js architectures, backed by solid full-cycle engineering across Node.js, REST APIs, strict RBAC, and relational databases.",
+      quickFacts: [
+        { label: "Target Roles", value: "Senior Frontend Engineer · Senior React / Next.js Engineer · Full Stack (Frontend-Heavy)" },
+        { label: "Total Experience", value: "10+ Years in Software Engineering (5+ Years specialized React/Next.js)" },
+        { label: "Core Stack", value: "React 19, Next.js 16, JavaScript (ES6+), Material UI, Node.js, Express, SQL Server, PostgreSQL, Prisma" },
+        { label: "Location & Timezone", value: "Managua, Nicaragua (CST / UTC-6) · Available for Global Remote Positions" },
+        { label: "Engagement", value: "Full-Time Remote Contractor (W-8BEN / International Contractor Agreement)" },
+      ],
+      valueProps: [
+        {
+          title: "Frontend Craftsmanship at Senior Level",
+          desc: "Modular component design, performant state management, responsive UI, SSR/SSG with Next.js, and clean code that teams love to maintain.",
+        },
+        {
+          title: "System-Minded Engineering",
+          desc: "Deep understanding of how frontends connect to the backend: designing clear REST contracts, authenticating via JWT/RBAC, and diagnosing query bottlenecks.",
+        },
+        {
+          title: "Enterprise & Multi-Tenant Experience",
+          desc: "Real-world experience with complex business logic, accounting rules, tenant data isolation, and mission-critical reliability.",
+        },
+        {
+          title: "High Ownership & Autonomous Execution",
+          desc: "Disciplined async communication, proactive problem-solving, thorough documentation, and steady delivery in remote team environments.",
+        },
+      ],
+      cta: {
+        heading: "Ready to Discuss Opportunities?",
+        subheading: "I am actively exploring Senior Frontend opportunities with high-performing remote teams worldwide.",
+        btnLinkedIn: "Connect on LinkedIn",
+        btnEmail: "Email Directly",
+        btnResume: "Download Resume (PDF)",
+      },
+    },
+    engineering: {
+      badge: "Engineering Notes",
+      title: "Architecture & Engineering Insights",
+      subtitle: "Practical software engineering reflections on enterprise frontends, multi-tenant SaaS, and data architectures.",
+      articles: [
+        {
+          slug: "building-enterprise-dashboards-react-nextjs",
+          title: "Building Scalable Enterprise Dashboards with React and Next.js",
+          summary: "Architectural patterns for high-density business dashboards: state partitioning, optimistic UI updates, and server-side data hydration without memory leaks.",
+          date: "2026",
+          category: "Frontend Architecture",
+          readTime: "6 min read",
+          content: [
+            "Enterprise dashboards differ fundamentally from consumer analytics pages: they combine dense tabular data, multi-criteria filtering, financial calculations, and frequent user interaction.",
+            "In this note, I break down the architectural strategy I use in production: segregating UI state from server cache, leveraging Next.js Server Components for initial hydration, and keeping client bundles lightweight.",
+            "Key takeaway: Never load unpaginated relational datasets on the client; enforce server-level aggregation and keep presentation components purely functional.",
+          ],
+        },
+        {
+          slug: "multi-tenant-saas-data-isolation",
+          title: "Multi-Tenant SaaS Architecture: Protecting Tenant Data Boundaries",
+          summary: "How to design multi-tenant web systems that guarantee zero data leakage between organizations using middleware tenant resolution and scoped persistence.",
+          date: "2026",
+          category: "SaaS Architecture",
+          readTime: "7 min read",
+          content: [
+            "In multi-tenant SaaS applications, tenant isolation is not just a feature—it is the foundational trust boundary of the entire business.",
+            "Whether using shared database schemas with tenant identifiers or schema-per-tenant isolation, the critical layer is the request context middleware. Resolving the tenant securely from cryptographically signed JWT tokens prevents unauthorized cross-tenant queries.",
+            "Always enforce tenant filters at the ORM/database level rather than relying solely on frontend state checks.",
+          ],
+        },
+        {
+          slug: "designing-rbac-enterprise-applications",
+          title: "Designing Practical RBAC Frameworks for Mission-Critical Web Applications",
+          summary: "A battle-tested approach to role-based access control (RBAC): combining granular permissions, JWT claims, and center-based organizational scoping.",
+          date: "2026",
+          category: "Security & Governance",
+          readTime: "5 min read",
+          content: [
+            "Simple role checks (like is_admin: true) quickly fail when software reaches enterprise scale. Organizations require granular permission gates: view_reports, issue_refunds, assign_teachers.",
+            "By mapping roles to specific permission sets and embedding active permissions inside the session context, the frontend UI can conditionally render action buttons while the backend API independently validates every single mutation.",
+            "For institutional software, permissions must also be bound to organizational centers (e.g. Center ID), ensuring users only operate within their assigned physical or logical facility.",
+          ],
+        },
+        {
+          slug: "sql-server-postgresql-enterprise-systems",
+          title: "Relational Modeling & Query Optimization: SQL Server & PostgreSQL Lessons",
+          summary: "Key lessons from a decade of production databases: indexing strategies, ACID transaction boundaries, and stored procedure optimization.",
+          date: "2026",
+          category: "Database & Persistence",
+          readTime: "8 min read",
+          content: [
+            "Frontends are only as fast as the queries backing them. In transactional software with thousands of inventory items and financial installments, bad query plans degrade the entire user experience.",
+            "Lessons learned: maintain selective indexes on foreign keys and tenant columns, wrap multi-table state transitions in explicit ACID transactions, and utilize stored procedures for mission-critical batch operations in SQL Server.",
+          ],
         },
       ],
     },
@@ -565,15 +737,16 @@ export const portfolioData = {
     footer: {
       rights: "All rights reserved.",
       tagline: "Senior Frontend Engineer · React · Next.js · Node.js · SaaS Architectures",
+      locationTag: "Managua, Nicaragua · Available for Remote Opportunities",
       backToTop: "Back to top",
     },
   },
 
   es: {
     meta: {
-      title: "Noé González Mendoza | Senior Frontend Engineer",
+      title: "Noé González Mendoza | Senior Frontend Engineer | React & Next.js",
       description:
-        "Ingeniero de Software Senior especializado en React, Next.js y arquitecturas SaaS empresariales con más de 10 años de experiencia.",
+        "Ingeniero de Software especializado en React y Next.js, con más de 10 años construyendo aplicaciones empresariales y plataformas SaaS.",
     },
     nav: {
       home: "Inicio",
@@ -584,10 +757,17 @@ export const portfolioData = {
       experience: "Experiencia",
       architecture: "Arquitectura",
       security: "Seguridad",
+      engineering: "Notas Técnicas",
+      hireMe: "Contratar",
       contact: "Contacto",
+      resume: "CV",
     },
     hero: {
-      availability: "Disponible para posiciones Senior Frontend & Full Stack · Remoto",
+      availability: "Disponible para Oportunidades Remotas Senior Frontend",
+      location: "Managua, Nicaragua",
+      remoteBadge: "Disponible para Oportunidades Remotas Senior Frontend",
+      remoteSubtag: "Ubicado en Managua, Nicaragua · Disponible para equipos remotos globales",
+      positioningStatement: "Construyendo interfaces web modernas para sistemas complejos de negocio.",
       titlePrefix: "Ing.",
       name: "Noé González Mendoza",
       mainRole: "Senior Frontend Engineer",
@@ -603,6 +783,8 @@ export const portfolioData = {
       btnProjects: "Ver Proyectos",
       btnContact: "Contáctame",
       btnLinkedin: "Perfil de LinkedIn",
+      btnResume: "Descargar CV",
+      resumeUrl: "/Noe-Gonzalez-Mendoza-Resume.pdf",
       stats: [
         { value: "10+", label: "Años Experiencia", detail: "Ingeniería de Software" },
         { value: "5+", label: "Años React / Next.js", detail: "Frontend Moderno Especializado" },
@@ -664,12 +846,12 @@ export const portfolioData = {
             "Autenticación (JWT)",
             "Autorización (RBAC)",
             "Seguridad de Endpoints",
-            "Integración de Microservicios",
+            "Servicios Desacoplados",
           ],
         },
         {
           id: "data",
-          title: "Bases de Datos",
+          title: "Bases de Datos & Persistencia",
           description: "Integridad transaccional, optimización de consultas y modelado.",
           skills: [
             "SQL Server",
@@ -692,7 +874,7 @@ export const portfolioData = {
             "Control de Acceso Basado en Roles (RBAC)",
             "Sistemas Empresariales",
             "Auditoría de Actividad",
-            "CI/CD & Despliegue en Nube",
+            "Despliegue & Hosting",
           ],
         },
       ],
@@ -706,7 +888,7 @@ export const portfolioData = {
         {
           title: "Aplicaciones Empresariales",
           description:
-            "Sistemas administrativos y plataformas empresariales de alta concurrencia adaptadas a procesos operativos complejos.",
+            "Sistemas administrativos y plataformas empresariales de alta confiabilidad adaptadas a procesos operativos complejos y reglas institucionales.",
         },
         {
           title: "Plataformas SaaS Multiempresa",
@@ -747,12 +929,19 @@ export const portfolioData = {
         badgeMobile: "Extensión Móvil",
         diagramFlow: "Flujo Operativo Comercial:",
         diagramTree: "Estructura Jerárquica Multi-Sucursal:",
+        btnCaseStudy: "Ver Caso de Estudio →",
+        statusLabel: "Estado",
+        challengesLabel: "Desafíos de Ingeniería",
+        architectureLabel: "Arquitectura & Diseño",
+        backToProjects: "← Volver a Proyectos",
       },
       list: [
         {
           id: "education-saas",
+          slug: "education-saas",
           title: "Plataforma Educativa SaaS",
           type: "SaaS Multi-Tenant",
+          status: "Producción · SaaS Multi-Tenant",
           highlight: "Plataforma SaaS Multiempresa para Colegios y Centros de Formación",
           problem:
             "Las instituciones educativas suelen lidiar con herramientas fragmentadas para matrículas, calificaciones, cobros y comunicación, sin contar con un aislamiento seguro entre campus o sedes.",
@@ -780,14 +969,23 @@ export const portfolioData = {
           ],
           contribution:
             "Arquitecté el frontend completo con Next.js y MUI, implementé el middleware de autorización RBAC con JWT, estructuré esquemas de datos con Prisma/PostgreSQL y construí los módulos de calificaciones y pagos.",
+          engineeringChallenges: [
+            "Garantizar cero contaminación de datos entre instituciones en todas las consultas mediante middleware de contexto de tenant.",
+            "Cálculos complejos de promedios con ponderaciones institucionales dinámicas y emisión de boletas académicas.",
+            "Optimización de respuesta en frontend con caché de Next.js durante los periodos de alta concurrencia de matrícula y cobros.",
+          ],
+          architectureDetails:
+            "Frontend SSR/SSG en Next.js conectado a servicios desacoplados en Node.js/Express. Base de datos PostgreSQL con Prisma ORM y esquemas segregados por tenant. Tokens JWT con ID de organización y permisos RBAC.",
         },
         {
           id: "national-education",
+          slug: "national-education-systems",
           title: "Sistema Nacional de Gestión Educativa",
           type: "Experiencia Institucional Real",
+          status: "Experiencia Profesional · Escala Institucional",
           highlight: "Ecosistema Institucional de Gestión Educativa a Escala Nacional",
           problem:
-            "La infraestructura educativa a nivel nacional requería modernizar sistemas administrativos y de registro académico con alta confiabilidad, trazabilidad y restricciones de acceso estrictas por sede.",
+            "La infraestructura educativa a nivel nacional requería modernizar sistemas administrativos y de registro académico con alta confiabilidad, trazabilidad y restricciones de acceso estrictas por sede bajo estándares institucionales.",
           solution:
             "Participé en el desarrollo y evolución de sistemas institucionales para procesos académicos masivos, implementando permisos asignados por centro educativo y consultas de alto rendimiento.",
           features: [
@@ -810,11 +1008,20 @@ export const portfolioData = {
           ],
           contribution:
             "Desarrollo frontend e integración de APIs, implementación de reglas de negocio para permisos por centro escolar asignado y optimización de stored procedures en SQL Server sin exponer información confidencial.",
+          engineeringChallenges: [
+            "Aplicar restricciones estrictas de ámbito para que cada usuario administrativo únicamente acceda a los expedientes de su centro asignado.",
+            "Generación eficiente de reportes masivos de ciclos escolares sobre bases de datos relacionales de alta demanda.",
+            "Coordinación de módulos frontend en React con servicios empresariales institucionales manteniendo total confidencialidad.",
+          ],
+          architectureDetails:
+            "Frontend desacoplado en React y Next.js consumiendo endpoints REST protegidos sobre SQL Server. Reglas de negocio validadas tanto en capa de middleware como en stored procedures T-SQL optimizados.",
         },
         {
           id: "multi-tenant-erp",
+          slug: "multi-tenant-erp-pos",
           title: "ERP & POS Multiempresa",
           type: "SaaS Multi-Tenant",
+          status: "Producción · ERP Multiempresa",
           highlight: "Operaciones Comerciales con Aislamiento Estricto de Datos",
           tenantIsolationNotice: "Aislamiento Estricto de Datos (Tenant Isolation)",
           problem:
@@ -841,11 +1048,20 @@ export const portfolioData = {
           ],
           contribution:
             "Diseño de la lógica de resolución de tenant por petición, desarrollo de la interfaz de usuario con Next.js y modelado de partición de datos para garantizar confidencialidad entre empresas.",
+          engineeringChallenges: [
+            "Estructura jerárquica de multi-empresa con sucursales independientes y resolución veloz de catálogo.",
+            "Cobro veloz en POS con actualizaciones optimistas en cliente y emisión inmediata de recibos.",
+            "Pista de auditoría inmutable que registra cada venta, devolución o movimiento de existencias.",
+          ],
+          architectureDetails:
+            "Arquitectura multiempresa que resuelve el contexto de organización por encabezados de petición. Esquemas particionados y RBAC estricto que restringe el acceso según la empresa y sucursal autorizada.",
         },
         {
           id: "sales-inventory",
+          slug: "sales-inventory",
           title: "Sistema de Ventas e Inventario",
           type: "Crítico de Negocio",
+          status: "Producción · Crítico de Negocio",
           highlight: "Flujo Comercial con Control de Vencimientos y Créditos",
           flowDiagram: [
             "Producto",
@@ -876,11 +1092,20 @@ export const portfolioData = {
           ],
           contribution:
             "Creación de la experiencia de usuario interactiva, desarrollo del motor de estados de cuenta de clientes y algoritmos para deducción automática de existencias por lote.",
+          engineeringChallenges: [
+            "Seguimiento FIFO de lotes con fechas de vencimiento para prevenir pérdidas de mercancía caducada.",
+            "Conciliación dinámica de saldos a crédito con bloqueo automático preventivo ante deuda vencida.",
+            "Integración ágil de lectores de código de barras sin demoras de interfaz en mostradores de venta rápida.",
+          ],
+          architectureDetails:
+            "Cliente React con manejo optimizado de estado para operaciones de mostrador. Backend Node.js ejecutando transacciones ACID para evitar inconsistencias de inventario.",
         },
         {
           id: "restaurant-pos",
+          slug: "restaurant-pos",
           title: "POS SaaS para Restaurantes",
           type: "SaaS Multi-Tenant",
+          status: "Producción · SaaS para Restaurantes",
           highlight: "Gestión de Sucursales, Mesas, Comandas, Pantalla de Cocina (KDS) y Caja",
           treeArchitecture: {
             root: "Restaurante",
@@ -909,11 +1134,20 @@ export const portfolioData = {
           ],
           contribution:
             "Implementé el tablero de pedidos en cocina, la vista de asignación interactiva de mesas y la configuración modular de roles de restaurante.",
+          engineeringChallenges: [
+            "Sincronización en tiempo real entre pedidos en sala, pantalla de cocina (KDS) y caja registradora.",
+            "División de cuentas y modificaciones de platillos en entornos de hostelería de alto ritmo.",
+            "Deducción automática de materias primas e insumos a partir de recetas configurables por platillo.",
+          ],
+          architectureDetails:
+            "Mapa interactivo de salones con actualización basada en eventos. Base de datos PostgreSQL alojada en nube con partición por sucursal y roles diferenciados para meseros, cocina y caja.",
         },
         {
           id: "personal-loans",
+          slug: "personal-loans",
           title: "Préstamos Personales y Amortización",
           type: "Crítico de Negocio",
+          status: "Motor Verificado · Sistema Financiero",
           highlight: "Reglas de Negocio Financieras y Amortización sobre Saldo Insoluto",
           problem:
             "Las empresas de préstamos y crédito necesitan cálculos matemáticos confiables y transparentes para intereses sobre saldo insoluto, cuotas y abonos anticipados.",
@@ -935,11 +1169,20 @@ export const portfolioData = {
           ],
           contribution:
             "Programación de las fórmulas financieras y tablas de amortización interactivas, interfaces de simulación para clientes y consistencia en base de datos.",
+          engineeringChallenges: [
+            "Precisión matemática en algoritmos de saldo insoluto evitando discrepancias de redondeo decimal.",
+            "Generación dinámica de cronogramas de pago con soporte de calendarios quincenales y mensuales.",
+            "Lógica de abonos extraordinarios a capital recalculando intereses futuros y saldo remanente.",
+          ],
+          architectureDetails:
+            "Motor de cómputo financiero en JavaScript puro en el cliente y validación transaccional atómica en base de datos para garantizar consistencia contable.",
         },
         {
           id: "mobile-sales",
+          slug: "mobile-sales-inventory",
           title: "Ventas e Inventario Móvil (Extensión Android)",
           type: "Extensión Móvil",
+          status: "Producción · Extensión Android",
           highlight: "Operaciones de Venta e Inventario en Campo para Android",
           problem:
             "Agentes de ventas en ruta y personal de almacén requerían consultar disponibilidad de productos y emitir pedidos sin depender de una computadora de escritorio.",
@@ -949,8 +1192,8 @@ export const portfolioData = {
             "Consulta Móvil de Inventario en Tiempo Real",
             "Levantamiento de Pedidos y Facturación en Ruta",
             "Verificación de Saldo de Clientes en Campo",
-            "Sincronización Eficiente con la API Principal",
-            "Integración de Lectura de Códigos e Impresión de Tickets",
+            "Conectividad Móvil Eficiente y Sincronización",
+            "Captura de Códigos e Impresión de Tickets",
           ],
           technologies: [
             "Android Integration",
@@ -961,6 +1204,13 @@ export const portfolioData = {
           ],
           contribution:
             "Diseño de pantallas móviles orientadas a la agilidad operativa, creación de endpoints optimizados para conexiones móviles y flujo de captura rápida de códigos.",
+          engineeringChallenges: [
+            "Sincronización ágil de pedidos a través de conexiones de datos móviles variables en rutas de entrega.",
+            "Lectura de códigos de barras e impresión térmica de tickets en operaciones de almacén.",
+            "Conciliación de estado con la base de datos central al restablecer conectividad.",
+          ],
+          architectureDetails:
+            "Frontend híbrido móvil conectado a los endpoints REST del ERP central, optimizado para vendedores de ruta y operadores de almacén.",
         },
       ],
     },
@@ -984,7 +1234,7 @@ export const portfolioData = {
         },
         {
           period: "2020 — 2023",
-          role: "Especialización en Frontend Moderno & Full Stack",
+          role: "Especialización en Frontend Moderno & Sistemas Full Stack",
           focus:
             "Evolución de sistemas hacia el ecosistema web moderno con React, Next.js y Node.js. Creación de interfaces intuitivas y servicios REST desacoplados.",
         },
@@ -1082,7 +1332,7 @@ export const portfolioData = {
         {
           title: "Auditoría de Actividad",
           description:
-            "Registros inmutables de transacciones críticas, cambios de estado y accesos para cumplimiento normativo.",
+            "Registros de auditoría de transacciones críticas, cambios de estado y accesos para cumplimiento normativo.",
         },
         {
           title: "Restricción por Centro Asignado",
@@ -1103,7 +1353,7 @@ export const portfolioData = {
         },
         {
           category: "Backend",
-          items: ["Node.js", "Express.js", "APIs RESTful", "Autenticación JWT", "Diseño de Middleware", "Microservicios"],
+          items: ["Node.js", "Express.js", "APIs RESTful", "Autenticación JWT", "Diseño de Middleware", "Servicios Desacoplados"],
         },
         {
           category: "Bases de Datos",
@@ -1112,6 +1362,102 @@ export const portfolioData = {
         {
           category: "Arquitectura & DevOps",
           items: ["SaaS Multi-Tenancy", "Tenant Isolation", "Seguridad RBAC", "Git & Control de Versiones", "Docker Basics", "Netlify / Vercel"],
+        },
+      ],
+    },
+    hireMe: {
+      badge: "Perfil para Reclutadores",
+      title: "Contratar a Noé González Mendoza",
+      subtitle: "Senior Frontend Engineer · React & Next.js · Sistemas Empresariales & SaaS",
+      lead: "Más de 10 años de experiencia en ingeniería de software de producción. Alta especialización en arquitecturas modernas con React y Next.js, respaldada por sólida capacidad full-cycle en Node.js, APIs REST, RBAC estricto y bases de datos relacionales.",
+      quickFacts: [
+        { label: "Puestos Objetivo", value: "Senior Frontend Engineer · Senior React / Next.js Engineer · Full Stack (Enfoque Frontend)" },
+        { label: "Experiencia Total", value: "+10 Años en Ingeniería de Software (5+ Años especializado en React/Next.js)" },
+        { label: "Stack Principal", value: "React 19, Next.js 16, JavaScript (ES6+), Material UI, Node.js, Express, SQL Server, PostgreSQL, Prisma" },
+        { label: "Ubicación & Zona Horaria", value: "Managua, Nicaragua (CST / UTC-6) · Disponible para Posiciones Remotas Globales" },
+        { label: "Modalidad de Contrato", value: "Contratista Remoto a Tiempo Completo (W-8BEN / Contrato Internacional)" },
+      ],
+      valueProps: [
+        {
+          title: "Destreza Frontend de Nivel Senior",
+          desc: "Diseño modular de componentes, gestión reactiva de estado, interfaces responsivas, renderizado SSR/SSG con Next.js y código limpio.",
+        },
+        {
+          title: "Ingeniería con Visión de Sistema Completo",
+          desc: "Entendimiento profundo de la interacción con el backend: contratos REST claros, autenticación segura JWT/RBAC y optimización de consultas.",
+        },
+        {
+          title: "Experiencia Real en SaaS Multiempresa",
+          desc: "Trayectoria probada en flujos de negocio complejos, aislamiento estricto de datos por tenant y sistemas críticos de alta confiabilidad.",
+        },
+        {
+          title: "Autonomía y Disciplina Remota",
+          desc: "Excelente comunicación asíncrona, proactividad técnica, documentación clara y cumplimiento constante de objetivos en equipos distribuidos.",
+        },
+      ],
+      cta: {
+        heading: "¿Listo para conversar sobre oportunidades?",
+        subheading: "Estoy disponible para posiciones remotas Senior Frontend con equipos de alto rendimiento a nivel internacional.",
+        btnLinkedIn: "Conectar en LinkedIn",
+        btnEmail: "Enviar Correo Directo",
+        btnResume: "Descargar CV (PDF)",
+      },
+    },
+    engineering: {
+      badge: "Notas de Ingeniería",
+      title: "Criterio Técnico & Arquitectura",
+      subtitle: "Reflexiones prácticas de ingeniería de software sobre frontends empresariales, SaaS multi-tenant y bases de datos relacionales.",
+      articles: [
+        {
+          slug: "building-enterprise-dashboards-react-nextjs",
+          title: "Construyendo Dashboards Empresariales con React y Next.js",
+          summary: "Patrones arquitectónicos para dashboards densos: partición de estado, actualizaciones optimistas y precarga en servidor sin degradar la memoria.",
+          date: "2026",
+          category: "Arquitectura Frontend",
+          readTime: "6 min de lectura",
+          content: [
+            "Los tableros ejecutivos empresariales difieren radicalmente de las páginas de analítica estándar: combinan tablas densas, filtros multicriterio, cálculos financieros y alta frecuencia de interacción.",
+            "En esta nota explico la estrategia arquitectónica que aplico en producción: separar el estado local de UI del caché de servidor, aprovechar Server Components de Next.js para la hidratación inicial y mantener bundles ligeros en el navegador.",
+            "Regla fundamental: nunca descargar colecciones relacionales masivas sin paginar en cliente; consolidar los cálculos en servidor y mantener los componentes de presentación puramente funcionales.",
+          ],
+        },
+        {
+          slug: "multi-tenant-saas-data-isolation",
+          title: "Arquitectura SaaS Multiempresa: Protección de Fronteras de Datos",
+          summary: "Cómo estructurar aplicaciones SaaS que garanticen cero fugas de información entre organizaciones cliente usando middleware de contexto y persistencia particionada.",
+          date: "2026",
+          category: "Arquitectura SaaS",
+          readTime: "7 min de lectura",
+          content: [
+            "En aplicaciones SaaS multiempresa, el aislamiento de datos no es una opción; es el límite fundamental de confianza del negocio.",
+            "Tanto si se utilizan esquemas lógicos compartidos como particiones dedicadas, la pieza clave es el middleware de resolución de tenant. Resolver la organización de forma segura a partir de tokens JWT criptográficos impide consultas indebidas entre organizaciones.",
+            "Siempre debe aplicarse el filtro de tenant a nivel de ORM y base de datos, nunca delegar la seguridad exclusivamente al estado del frontend.",
+          ],
+        },
+        {
+          slug: "designing-rbac-enterprise-applications",
+          title: "Diseño Práctico de RBAC para Aplicaciones Web de Misión Crítica",
+          summary: "Un enfoque probado en producción para control de acceso basado en roles (RBAC): permisos atómicos, claims en JWT y alcance por centro operativo.",
+          date: "2026",
+          category: "Seguridad & Gobernanza",
+          readTime: "5 min de lectura",
+          content: [
+            "Las comprobaciones binarias simples (como es_admin: true) fracasan rápidamente ante la complejidad corporativa. Las organizaciones demandan permisos granulares: ver_reportes, emitir_reembolsos, asignar_profesores.",
+            "Al asociar roles a conjuntos específicos de permisos e incluir los permisos activos dentro de la sesión, el frontend puede renderizar condicionalmente acciones mientras las APIs validan cada mutación de forma independiente.",
+            "Para sistemas institucionales, los permisos deben restringirse adicionalmente por centro operativo asignado, garantizando que los usuarios solo actúen dentro de su sede correspondiente.",
+          ],
+        },
+        {
+          slug: "sql-server-postgresql-enterprise-systems",
+          title: "Modelado Relacional y Optimización de Consultas: Lecciones de SQL Server & PostgreSQL",
+          summary: "Aprendizajes clave tras una década con bases de datos transaccionales: indexación estratégica, límites ACID y procedimientos almacenados.",
+          date: "2026",
+          category: "Bases de Datos & Persistencia",
+          readTime: "8 min de lectura",
+          content: [
+            "La velocidad del frontend está directamente condicionada por las consultas que lo respaldan. En sistemas con miles de existencias y calendarios de pagos, un plan de ejecución deficiente degrada toda la experiencia de usuario.",
+            "Lecciones prácticas: mantener índices selectivos en llaves foráneas y columnas de tenant, encapsular transiciones multidominio en transacciones ACID explícitas y optimizar stored procedures T-SQL para reportes masivos.",
+          ],
         },
       ],
     },
@@ -1135,6 +1481,7 @@ export const portfolioData = {
     footer: {
       rights: "Todos los derechos reservados.",
       tagline: "Senior Frontend Engineer · React · Next.js · Node.js · Arquitectura SaaS",
+      locationTag: "Managua, Nicaragua · Disponible para Oportunidades Remotas",
       backToTop: "Volver arriba",
     },
   },
@@ -1142,6 +1489,9 @@ export const portfolioData = {
   social: {
     email: "noergm3@gmail.com",
     linkedin: "https://www.linkedin.com/in/ingnoegonzalez/",
+    github: "https://github.com/noergm3",
     siteUrl: "https://noegonzalez.dev",
+    resumeUrl: "/Noe-Gonzalez-Mendoza-Resume.pdf",
+    location: "Managua, Nicaragua",
   },
 };

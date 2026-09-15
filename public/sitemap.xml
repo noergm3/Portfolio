@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap><loc>https://noegonzalez.dev/sitemap-0.xml</loc></sitemap>
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://noegonzalez.dev/engineering/building-enterprise-dashboards-react-nextjs</loc><lastmod>2026-09-15T00:37:04.586Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://noegonzalez.dev/engineering/designing-rbac-enterprise-applications</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://noegonzalez.dev/engineering/multi-tenant-saas-data-isolation</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://noegonzalez.dev/engineering/sql-server-postgresql-enterprise-systems</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://noegonzalez.dev/engineering</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://noegonzalez.dev/hire-me</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+<url><loc>https://noegonzalez.dev</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+<url><loc>https://noegonzalez.dev/projects/education-saas</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://noegonzalez.dev/projects/mobile-sales-inventory</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://noegonzalez.dev/projects/multi-tenant-erp-pos</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://noegonzalez.dev/projects/national-education-systems</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://noegonzalez.dev/projects/personal-loans</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://noegonzalez.dev/projects/restaurant-pos</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://noegonzalez.dev/projects/sales-inventory</loc><lastmod>2026-09-15T00:37:04.587Z</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+</urlset>

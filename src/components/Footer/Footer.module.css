@@ -43,6 +43,17 @@
   color: #888899;
 }
 
+.locationTag {
+  font-size: 0.82rem;
+  color: #F7CD00;
+  margin: 0;
+}
+
+.hireMeFooterLink {
+  color: #F7CD00 !important;
+  font-weight: 700 !important;
+}
+
 .footerNav {
   display: flex;
   gap: 18px;

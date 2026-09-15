@@ -65,11 +65,11 @@ export default function HomeSection() {
   };
 
   const handleLinkedInClick = () => {
-    gtag.event({
-      action: "click_linkedin",
-      category: "engagement",
-      label: "hero",
-    });
+    gtag.trackLinkedInClick("hero");
+  };
+
+  const handleResumeClick = () => {
+    gtag.trackResumeDownload("hero");
   };
 
   return (
@@ -78,18 +78,24 @@ export default function HomeSection() {
         {/* Recruiter & Availability Pill */}
         <div className={styles.availabilityBadge}>
           <span className={styles.pulseDot}></span>
-          <span>{t.hero.availability}</span>
+          <span>{t.hero.remoteBadge || t.hero.availability}</span>
         </div>
 
+        {t.hero.remoteSubtag && (
+          <div className={styles.locationBadge}>
+            <span>📍 {t.hero.remoteSubtag}</span>
+          </div>
+        )}
+
         <Parallax speed={-3}>
-          <h1 className={styles.neon}>
+          <div className={styles.neon}>
             <span className={styles.titlePrefix}>{t.hero.titlePrefix} </span>
             {typedName}
             <span className={styles.blinkingCursor}>&lt;/&gt;</span>
-          </h1>
+          </div>
         </Parallax>
 
-        <div className={styles.titleRole}>{t.hero.mainRole}</div>
+        <h1 className={styles.titleRole}>{t.hero.mainRole}</h1>
 
         <p className={styles.subtitle}>
           <span className={styles.subtitlePrompt}>&gt;</span> {roleText}
@@ -141,6 +147,32 @@ export default function HomeSection() {
             className={styles.secondaryButton}
           >
             <span>{t.hero.btnContact}</span>
+          </a>
+
+          <a
+            href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
+            download
+            onClick={handleResumeClick}
+            className={styles.resumeButton}
+            aria-label={t.hero.btnResume || "Download Resume"}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>{t.hero.btnResume || "Download Resume"}</span>
           </a>
 
           <a
