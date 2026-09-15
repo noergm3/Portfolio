@@ -128,6 +128,7 @@ export default function Footer() {
 
             <a
               href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
+              download="Noe-Gonzalez-Mendoza-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleResumeClick}

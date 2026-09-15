@@ -151,7 +151,7 @@ export default function HomeSection() {
 
           <a
             href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
-            download
+            download="Noe-Gonzalez-Mendoza-Resume.pdf"
             onClick={handleResumeClick}
             className={styles.resumeButton}
             aria-label={t.hero.btnResume || "Download Resume"}

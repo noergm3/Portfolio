@@ -77,6 +77,7 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
             </a>
             <a
               href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
+              download="Noe-Gonzalez-Mendoza-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleResume}
@@ -192,6 +193,7 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
             </a>
             <a
               href={social.resumeUrl || "/Noe-Gonzalez-Mendoza-Resume.pdf"}
+              download="Noe-Gonzalez-Mendoza-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleResume}
