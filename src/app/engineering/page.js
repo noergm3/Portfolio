@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Engineering Notes & System Design - Noé González Mendoza",
     description:
-      "Deep technical reflections on React, Next.js, multi-tenant data isolation, RBAC, and database performance by Senior Frontend Engineer Noé González Mendoza.",
+      "Deep technical reflections on React, Next.js, multi-tenant data isolation, RBAC, and database performance by Senior Software Engineer Noé González Mendoza.",
     url: "https://noegonzalez.dev/engineering",
     type: "website",
     images: [

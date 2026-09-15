@@ -26,7 +26,7 @@ export default function ArchitectureSection() {
                 <div className={styles.diagramNode}>
                   <div className={styles.nodeHeader}>
                     <span className={styles.nodeBadge}>{node.badge}</span>
-                    <h4 className={styles.nodeTitle}>{node.title}</h4>
+                    <h3 className={styles.nodeTitle}>{node.title}</h3>
                   </div>
                   <div className={styles.nodeBody}>
                     <span className={styles.nodeTech}>{node.tech}</span>

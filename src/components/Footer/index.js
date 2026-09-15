@@ -144,7 +144,7 @@ export default function Footer() {
             © {currentYear} Noé González Mendoza. {t.footer.rights}
           </p>
           <p className={styles.builtWith}>
-            Senior Frontend Engineer · React 19 · Next.js 16 App Router · Turbopack · Clean Architecture
+            Senior Software Engineer · Full Stack · React 19 · Next.js 16 App Router · Node.js · Clean Architecture
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Noé González Mendoza | Senior Frontend Engineer";
+export const alt = "Noé González Mendoza | Senior Software Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -55,7 +55,7 @@ export default async function Image() {
             letterSpacing: "-0.5px",
           }}
         >
-          Senior Frontend Engineer
+          Senior Software Engineer
         </div>
 
         <div
@@ -66,7 +66,7 @@ export default async function Image() {
             marginBottom: "24px",
           }}
         >
-          React · Next.js · JavaScript
+          Full Stack · React · Next.js · Node.js
         </div>
 
         <div
@@ -78,7 +78,7 @@ export default async function Image() {
             marginBottom: "36px",
           }}
         >
-          Enterprise Applications · Multi-Tenant SaaS · Node.js & APIs · Managua, Nicaragua
+          Enterprise Systems · Multi-Tenant SaaS · SQL & Relational Data · Managua, Nicaragua
         </div>
 
         <div

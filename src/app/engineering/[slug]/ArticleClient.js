@@ -60,8 +60,8 @@ export default function ArticleClient({ slug, initialEn, initialEs }) {
             <div className={styles.authorName}>Ing. Noé González Mendoza</div>
             <div className={styles.authorBio}>
               {lang === "es"
-                ? "Senior Frontend Engineer con 10+ años de trayectoria en ingeniería de software, especializado en React, Next.js, plataformas SaaS multi-tenant y optimización de bases de datos relacionales."
-                : "Senior Frontend Engineer with 10+ years of software engineering experience, specialized in React, Next.js, multi-tenant SaaS platforms, and relational database systems."}
+                ? "Senior Software Engineer con más de 10 años de trayectoria en ingeniería de software, especializado en desarrollo Full Stack con React, Next.js, Node.js, plataformas SaaS multi-tenant y bases de datos relacionales."
+                : "Senior Software Engineer with 10+ years of software engineering experience, specialized in Full Stack development with React, Next.js, Node.js, multi-tenant SaaS platforms, and relational database systems."}
             </div>
           </div>
         </div>
@@ -75,8 +75,8 @@ export default function ArticleClient({ slug, initialEn, initialEs }) {
           </h2>
           <p className={styles.ctaText}>
             {lang === "es"
-              ? "Estoy disponible para roles remotos Senior Frontend donde la solidez técnica y la arquitectura de sistemas marquen la diferencia."
-              : "I am available for Senior Frontend roles where engineering rigor and real-world system architecture matter."}
+              ? "Estoy disponible para oportunidades remotas como Senior Software Engineer donde la solidez técnica y la arquitectura de sistemas marquen la diferencia."
+              : "I am available for remote Senior Software Engineer roles where engineering rigor and real-world system architecture matter."}
           </p>
           <div className={styles.ctaButtons}>
             <Link

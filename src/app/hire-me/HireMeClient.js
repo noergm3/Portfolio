@@ -53,7 +53,7 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
         <header className={styles.header}>
           <div className={styles.statusPill}>
             <span className={styles.pulseDot} />
-            {hireData.badge || "Available for Remote Senior Frontend Roles"}
+            {hireData.badge || "Available for Remote Senior Software Engineer Roles"}
           </div>
 
           <h1 className={styles.title}>{hireData.title}</h1>
@@ -147,7 +147,7 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
         {/* 3. Featured Real Systems */}
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>
-            {lang === "es" ? "Sistemas y Casos de Estudio Verificados" : "Verified Systems & Case Studies"}
+            {lang === "es" ? "Sistemas de Producción y Casos de Estudio" : "Production Systems & Case Studies"}
           </h2>
           <div className={styles.systemsGrid}>
             {keyProjects.map((p) => (
@@ -184,7 +184,7 @@ export default function HireMeClient({ initialEn, initialEs, projectsEn, project
           </h2>
           <p className={styles.contactSubtext}>
             {hireData.cta?.subheading ||
-              "I am actively exploring Senior Frontend opportunities with high-performing remote teams worldwide."}
+              "I am actively exploring Senior Software Engineer & Full Stack opportunities with high-performing remote teams worldwide."}
           </p>
           <div className={styles.contactActions}>
             <a

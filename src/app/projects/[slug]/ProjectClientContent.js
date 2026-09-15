@@ -78,8 +78,8 @@ export default function ProjectClientContent({
               <span className={styles.metaLabel}>Role & Scope</span>
               <span className={styles.metaValue}>
                 {lang === "es"
-                  ? "Senior Frontend & Arquitectura"
-                  : "Senior Frontend & Architecture"}
+                  ? "Senior Software Engineer & Arquitectura"
+                  : "Senior Software Engineer & Architecture"}
               </span>
             </div>
             <div className={styles.metaCard}>
@@ -214,13 +214,13 @@ export default function ProjectClientContent({
         <div className={styles.ctaCard}>
           <h2 className={styles.ctaHeading}>
             {lang === "es"
-              ? "¿Buscas un Senior Frontend Engineer con experiencia real en sistemas?"
-              : "Looking for a Senior Frontend Engineer with real systems experience?"}
+              ? "¿Buscas un Senior Software Engineer con experiencia real en sistemas?"
+              : "Looking for a Senior Software Engineer with real systems experience?"}
           </h2>
           <p className={styles.ctaSubheading}>
             {lang === "es"
-              ? "Aporto solidez en arquitecturas React/Next.js, modelado de datos y diseño de software tolerante a fallos. Platiquemos sobre cómo puedo sumar a tu equipo."
-              : "I bring depth in modern React/Next.js architectures, data isolation, and resilient frontend systems. Let's discuss how I can contribute to your team."}
+              ? "Aporto solidez en arquitecturas React/Next.js, backend Node.js, modelado de datos y diseño de software tolerante a fallos. Platiquemos sobre cómo puedo sumar a tu equipo."
+              : "I bring depth across modern React/Next.js architectures, Node.js backend services, data modeling, and resilient software systems. Let's discuss how I can contribute to your team."}
           </p>
           <div className={styles.ctaButtonGroup}>
             <Link
